@@ -12,7 +12,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { Clipboard, Search, Link2, Globe, Settings, Heart, ChevronRight, Star, ArrowRight, Zap, Shield, Users } from 'lucide-react'
+import { Clipboard, Search, Link2, Globe, ChevronRight, ArrowRight, Zap, Shield, Users } from 'lucide-react'
 import { motion, AnimatePresence, useAnimation } from "framer-motion"
 import { useInView } from 'react-intersection-observer'
 
@@ -255,7 +255,7 @@ function Testimonials() {
                     <p className="text-gray-600">{testimonial.role}</p>
                   </div>
                 </div>
-                <p className="text-gray-700 italic">"{testimonial.content}"</p>
+                <p className="text-gray-700 italic">{testimonial.content}</p>
               </CardContent>
             </Card>
           </motion.div>
@@ -410,7 +410,7 @@ function Advertisement() {
                         </div>
                         <div className="md:w-1/2 p-6">
                           <motion.img
-                            src={content.image}
+                            // src={content.image}
                             alt={content.title}
                             className="rounded-2xl shadow-2xl"
                             whileHover={{ scale: 1.05 }}
