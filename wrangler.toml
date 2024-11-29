@@ -1,4 +1,0 @@
-name = "cliptrack"  # 对应 Cloudflare Workers 刚刚创建的项目名
-compatibility_date = "2024-11-29"    # 变更兼容日期
-pages_build_output_dir = "./.next"  # 你需要上传打包的目录
-send_metrics = false
