@@ -1,7 +1,7 @@
 
 
 "use client"
-// import Image from "next/image";
+import Image from "next/image";
 import React, { useState, useEffect } from 'react'
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
@@ -15,6 +15,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Clipboard, Search, Link2, Globe, ChevronRight, ArrowRight, Zap, Shield, Users } from 'lucide-react'
 import { motion, AnimatePresence, useAnimation } from "framer-motion"
 import { useInView } from 'react-intersection-observer'
+
 
 export default function ClipTrackIntro() {
   return (
