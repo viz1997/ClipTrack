@@ -20,7 +20,7 @@ const languages = [
 export function Navigation() {
   const [mounted, setMounted] = useState(false)
   const { theme, setTheme } = useTheme()
-  const { language, setLanguage } = useLanguage()
+  const { setLanguage } = useLanguage()
 
   useEffect(() => {
     setMounted(true)

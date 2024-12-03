@@ -420,7 +420,7 @@ function Advertisement() {
                         </div>
                         <div className="md:w-1/2 p-6">
                           <motion.img
-                            src={content.image}
+                            // src={content.image}
                             alt={content.title}
                             className="rounded-2xl shadow-2xl"
                             whileHover={{ scale: 1.05 }}

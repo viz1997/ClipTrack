@@ -1,30 +1,30 @@
 "use client"
 
-import { useLocale, useTranslations } from 'next-intl';
-import { useRouter, usePathname } from 'next-intl/client';
+import { useLocale } from 'next-intl';
+// import { useRouter, usePathname } from 'next-intl/client';
 import { Button } from "@/components/ui/button"
 
 const LanguageSwitcher: React.FC = () => {
-  const t = useTranslations('LanguageSwitcher');
+//   const t = useTranslations('LanguageSwitcher');
   const locale = useLocale();
-  const router = useRouter();
-  const pathname = usePathname();
+//   const router = useRouter();
+//   const pathname = usePathname();
 
-  const switchLanguage = (newLocale: string) => {
-    router.replace(pathname, {locale: newLocale});
-  };
+//   const switchLanguage = (newLocale: string) => {
+//     router.replace(pathname, {locale: newLocale});
+//   };
 
   return (
     <div className="flex space-x-2">
       <Button
         variant={locale === 'zh' ? 'default' : 'outline'}
-        onClick={() => switchLanguage('zh')}
+        // onClick={() => switchLanguage('zh')}
       >
         中文
       </Button>
       <Button
         variant={locale === 'en' ? 'default' : 'outline'}
-        onClick={() => switchLanguage('en')}
+        // onClick={() => switchLanguage('en')}
       >
         English
       </Button>
