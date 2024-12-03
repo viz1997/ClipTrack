@@ -1,6 +1,9 @@
 "use client"
 
 import { useState, useEffect } from 'react'
+import { ThemeProvider } from 'next-themes'
+import { LanguageProvider, useLanguage } from '@/contexts/LanguageContext'
+import { Navigation } from './Navigation'
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import {
@@ -13,31 +16,40 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Clipboard, Search, Link2, Globe, ChevronRight, ArrowRight, Zap, Shield, Users } from 'lucide-react'
 import { motion, AnimatePresence, useAnimation } from "framer-motion"
 import { useInView } from 'react-intersection-observer'
+import {useTranslations  } from '@/utils/loadTranslations'
+
 
 export default function ClipTrackIntro() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
-      <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
-      <div className="relative container mx-auto px-4 py-8">
-        <Header />
-        <MainFeatures />
-        <ProductShowcase />
-        <HowToUse />
-        <Advantages />
-        <Testimonials />
-        <PricingPlans />
-        <FAQ />
-        <CallToAction />
-        <Advertisement />
-      </div>
-    </div>
+    <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+      <LanguageProvider>
+        <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white dark:from-gray-900 dark:to-gray-800 text-gray-900 dark:text-gray-100">
+          <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
+          <div className="relative container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl py-12">
+            <Navigation />
+            <Header />
+            <MainFeatures />
+            <ProductShowcase />
+            <HowToUse />
+            <Advantages />
+            <Testimonials />
+            <PricingPlans />
+            <FAQ />
+            <CallToAction />
+            <Advertisement />
+          </div>
+        </div>
+      </LanguageProvider>
+    </ThemeProvider>
   )
 }
 
 function Header() {
+  const { language } = useLanguage();
+  const translations = useTranslations(language);
   return (
     <motion.div 
-      className="text-center py-20"
+      className="text-center py-24"
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
@@ -46,22 +58,22 @@ function Header() {
         initial={{ scale: 0 }}
         animate={{ scale: 1 }}
         transition={{ duration: 0.5, delay: 0.2 }}
-        className="mb-8"
+        className="mb-10"
       >
-        <img src="/placeholder.svg?height=100&width=100" alt="ClipTrack Logo" className="mx-auto h-24 w-24" />
+        <img src="/cliptrack.png?height=100&width=100" alt="ClipTrack Logo" className="mx-auto h-28 w-28" />
       </motion.div>
-      <h1 className="text-7xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600 mb-4">
-        ClipTrack
+      <h1 className="text-6xl md:text-7xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-teal-500 via-purple-500 to-orange-500 mb-6">
+        {translations.title}
       </h1>
-      <h2 className="text-2xl font-normal mt-4 text-gray-600 mb-12">
-        智能剪贴板助手 - 让信息管理更轻松
+      <h2 className="text-xl md:text-2xl font-normal mt-6 text-gray-600 dark:text-gray-300 mb-12 max-w-3xl mx-auto">
+        {translations.subtitle}
       </h2>
       <motion.div
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
       >
         <Button variant="default" size="lg" className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-10 py-6 rounded-full transition-all duration-300 ease-in-out transform hover:-translate-y-1 hover:shadow-xl text-lg font-semibold">
-          <Clipboard className="mr-2 h-6 w-6" /> 立即安装
+          <Clipboard className="mr-2 h-6 w-6" /> {translations.installButton}
         </Button>
       </motion.div>
     </motion.div>
@@ -195,7 +207,7 @@ function Advantages() {
   return (
     <section className="py-20 bg-gradient-to-r from-blue-50 to-purple-50 rounded-3xl my-20">
       <h2 className="text-5xl font-bold text-center mb-16 bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600">为什么选择ClipTrack</h2>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-6xl mx-auto">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-7xl mx-auto">
         {advantages.map((advantage, index) => (
           <motion.div
             key={index}
@@ -234,7 +246,7 @@ function Testimonials() {
   return (
     <section className="py-20">
       <h2 className="text-5xl font-bold text-center mb-16 bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600">用户评价</h2>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-6xl mx-auto">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-7xl mx-auto">
         {testimonials.map((testimonial, index) => (
           <motion.div
             key={index}
@@ -274,7 +286,7 @@ function PricingPlans() {
   return (
     <section className="py-20 bg-gradient-to-r from-blue-50 to-purple-50 rounded-3xl my-20">
       <h2 className="text-5xl font-bold text-center mb-16 bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600">定价方案</h2>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-6xl mx-auto">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-7xl mx-auto">
         {plans.map((plan, index) => (
           <motion.div
             key={index}
@@ -321,7 +333,7 @@ function FAQ() {
   return (
     <section className="py-20">
       <h2 className="text-5xl font-bold text-center mb-16 bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600">常见问题</h2>
-      <Accordion type="single" collapsible className="w-full max-w-4xl mx-auto">
+      <Accordion type="single" collapsible className="w-full max-w-3xl mx-auto">
         {faqs.map((faq, index) => (
           <AccordionItem key={index} value={`item-${index}`} className="mb-6 last:mb-0 bg-white/80 backdrop-blur-sm rounded-xl overflow-hidden border border-gray-200">
             <AccordionTrigger className="text-left hover:no-underline p-6">
@@ -339,10 +351,10 @@ function FAQ() {
 
 function CallToAction() {
   return (
-    <section className="py-20 bg-gradient-to-r from-blue-600 to-purple-600 rounded-3xl my-20 text-white">
-      <div className="max-w-4xl mx-auto text-center">
-        <h2 className="text-5xl font-bold mb-8">准备好提升您的工作效率了吗？</h2>
-        <p className="text-xl mb-12">立即开始使用ClipTrack，体验智能剪贴板带来的便利！</p>
+    <section className="py-24 bg-gradient-to-r from-blue-600 to-purple-600 rounded-3xl my-24 text-white">
+      <div className="max-w-4xl mx-auto text-center px-6">
+        <h2 className="text-4xl md:text-5xl font-bold mb-8">准备好提升您的工作效率了吗？</h2>
+        <p className="text-xl mb-12 max-w-2xl mx-auto">立即开始使用ClipTrack，体验智能剪贴板带来的便利！</p>
         <motion.div
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
