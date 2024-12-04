@@ -1,16 +1,110 @@
 {
-    "title": "ClipTrack - Smart Clipboard Manager",
-    "subtitle": "Easily manage your clipboard content and boost productivity",
-    "installButton": "Install Now",
-    "featuresTitle": "Key Features",
-    "feature1Title": "Smart Clipping",
-    "feature1Description": "Automatically save copied text, links, and images",
-    "feature2Title": "Quick Search",
-    "feature2Description": "Easily find and manage all your saved content",
-    "feature3Title": "Source Link Saving",
-    "feature3Description": "Automatically record the source webpage for easy reference",
-    "feature4Title": "Cross-device Sync",
-    "feature4Description": "Seamlessly sync your clipboard across multiple devices"
+  "nav": {
+    "features": "Features",
+    "howItWorks": "How It Works",
+    "pricing": "Pricing",
+    "download": "Download"
+  },
+  "hero": {
+    "title": "Manage Your Clipboard Like a Pro",
+    "description": "ClipTrack is the intelligent clipboard manager that helps you boost your productivity and organize your digital life.",
+    "getStarted": "Get Started",
+    "learnMore": "Learn More"
+  },
+  "features": {
+    "title": "Key Features",
+    "smartHistory": {
+      "title": "Smart Clipboard History",
+      "description": "Access your entire clipboard history with ease and never lose important information again."
+    },
+    "powerfulSearch": {
+      "title": "Powerful Search",
+      "description": "Find any copied item instantly with our advanced search functionality."
+    },
+    "scheduledClips": {
+      "title": "Scheduled Clips",
+      "description": "Schedule your clips to be available at the right time, enhancing your workflow."
+    },
+    "multiLanguage": {
+      "title": "Multi-language Support",
+      "description": "Use ClipTrack in your preferred language with our international language support."
+    },
+    "darkMode": {
+      "title": "Dark Mode",
+      "description": "Enjoy ClipTrack in light or dark mode for comfortable use in any environment."
+    }
+  },
+  "howItWorks": {
+    "title": "How It Works",
+    "step1": {
+      "title": "Install ClipTrack",
+      "description": "Download and install ClipTrack on your device."
+    },
+    "step2": {
+      "title": "Copy as Usual",
+      "description": "Use your device normally. ClipTrack works silently in the background."
+    },
+    "step3": {
+      "title": "Access Your Clips",
+      "description": "Open ClipTrack anytime to view, search, and manage your clipboard history."
+    }
+  },
+  "pricing": {
+    "title": "Choose Your Plan",
+    "basic": {
+      "title": "Basic Plan",
+      "description": "For individual users",
+      "price": "Free",
+      "features": [
+        "Store up to 100 clips",
+        "Basic search functionality",
+        "30-day clip history",
+        "Single device sync"
+      ],
+      "cta": "Get Started"
+    },
+    "pro": {
+      "title": "Pro Plan",
+      "description": "For power users and professionals",
+      "price": "$9.99/month",
+      "features": [
+        "Unlimited clip storage",
+        "Advanced search with filters",
+        "Unlimited clip history",
+        "Multi-device sync",
+        "Scheduled clips",
+        "Priority support"
+      ],
+      "cta": "Upgrade to Pro"
+    }
+  },
+  "download": {
+    "title": "Ready to Boost Your Productivity?",
+    "description": "Download ClipTrack now and start managing your clipboard like a pro.",
+    "cta": "Download Now",
+    "platforms": "Available for Windows, macOS, and Linux"
+  },
+  "support": {
+    "title": "Support Our Work",
+    "description": "If you find ClipTrack useful, consider supporting our work. Your contribution helps us maintain and improve the app.",
+    "buyMeACoffee": "Buy Me a Coffee",
+    "afdian": "爱发电"
+  },
+  "footer": {
+    "copyright": "© 2024 ClipTrack. All rights reserved.",
+    "terms": "Terms of Service",
+    "privacy": "Privacy"
+  },
+  "auth": {
+    "login": "Log In",
+    "register": "Register",
+    "email": "Email",
+    "password": "Password",
+    "confirmPassword": "Confirm Password",
+    "submitLogin": "Log In",
+    "submitRegister": "Register",
+    "alreadyHaveAccount": "Already have an account?",
+    "dontHaveAccount": "Don't have an account?"
   }
-  
-  
+}
+

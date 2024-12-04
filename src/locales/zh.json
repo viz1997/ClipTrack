@@ -1,16 +1,110 @@
 {
-    "title": "ClipTrack - 智能剪贴板管理工具",
-    "subtitle": "轻松管理您的剪贴内容，提高工作效率",
-    "installButton": "立即安装",
-    "featuresTitle": "主要功能",
-    "feature1Title": "智能剪贴",
-    "feature1Description": "自动保存您复制的文本、链接和图片",
-    "feature2Title": "快速搜索",
-    "feature2Description": "轻松查找和管理您保存的所有内容",
-    "feature3Title": "源链接保存",
-    "feature3Description": "自动记录内容的来源网页，方便回溯",
-    "feature4Title": "跨设备同步",
-    "feature4Description": "在多个设备间无缝同步您的剪贴板"
+  "nav": {
+    "features": "功能",
+    "howItWorks": "工作原理",
+    "pricing": "定价",
+    "download": "下载"
+  },
+  "hero": {
+    "title": "像专业人士一样管理您的剪贴板",
+    "description": "ClipTrack 是一款智能剪贴板管理器，可帮助您提高工作效率并组织数字生活。",
+    "getStarted": "开始使用",
+    "learnMore": "了解更多"
+  },
+  "features": {
+    "title": "主要功能",
+    "smartHistory": {
+      "title": "智能剪贴板历史",
+      "description": "轻松访问您的整个剪贴板历史记录，再也不会丢失重要信息。"
+    },
+    "powerfulSearch": {
+      "title": "强大的搜索功能",
+      "description": "使用我们的高级搜索功能立即找到任何复制的项目。"
+    },
+    "scheduledClips": {
+      "title": "定时剪辑",
+      "description": "安排您的剪辑在适当的时间可用，提高您的工作流程。"
+    },
+    "multiLanguage": {
+      "title": "多语言支持",
+      "description": "使用我们的国际语言支持，以您喜欢的语言使用 ClipTrack。"
+    },
+    "darkMode": {
+      "title": "深色模式",
+      "description": "在任何环境下舒适地使用 ClipTrack 的浅色或深色模式。"
+    }
+  },
+  "howItWorks": {
+    "title": "工作原理",
+    "step1": {
+      "title": "安装 ClipTrack",
+      "description": "在您的设备上下载并安装 ClipTrack。"
+    },
+    "step2": {
+      "title": "正常复制",
+      "description": "正常使用您的设备。ClipTrack 在后台静默工作。"
+    },
+    "step3": {
+      "title": "访问您的剪辑",
+      "description": "随时打开 ClipTrack 查看、搜索和管理您的剪贴板历史记录。"
+    }
+  },
+  "pricing": {
+    "title": "选择您的计划",
+    "basic": {
+      "title": "基础计划",
+      "description": "适用于个人用户",
+      "price": "免费",
+      "features": [
+        "存储多达 100 个剪辑",
+        "基本搜索功能",
+        "30 天剪辑历史",
+        "单设备同步"
+      ],
+      "cta": "开始使用"
+    },
+    "pro": {
+      "title": "专业计划",
+      "description": "适用于高级用户和专业人士",
+      "price": "¥69.99/月",
+      "features": [
+        "无限剪辑存储",
+        "带过滤器的高级搜索",
+        "无限剪辑历史",
+        "多设备同步",
+        "定时剪辑",
+        "优先支持"
+      ],
+      "cta": "升级到专业版"
+    }
+  },
+  "download": {
+    "title": "准备好提高您的工作效率了吗？",
+    "description": "立即下载 ClipTrack，像专业人士一样开始管理您的剪贴板。",
+    "cta": "立即下载",
+    "platforms": "适用于 Windows、macOS 和 Linux"
+  },
+  "support": {
+    "title": "支持我们的工作",
+    "description": "如果您觉得 ClipTrack 有用，请考虑支持我们的工作。您的贡献有助于我们维护和改进应用程序。",
+    "buyMeACoffee": "给我买杯咖啡",
+    "afdian": "爱发电"
+  },
+  "footer": {
+    "copyright": "© 2024 ClipTrack。保留所有权利。",
+    "terms": "服务条款",
+    "privacy": "隐私政策"
+  },
+  "auth": {
+    "login": "登录",
+    "register": "注册",
+    "email": "电子邮箱",
+    "password": "密码",
+    "confirmPassword": "确认密码",
+    "submitLogin": "登录",
+    "submitRegister": "注册",
+    "alreadyHaveAccount": "已有账户？",
+    "dontHaveAccount": "没有账户？"
   }
-  
-  
+}
+

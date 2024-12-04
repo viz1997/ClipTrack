@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react'
 import { ThemeProvider } from 'next-themes'
 import { LanguageProvider, useLanguage } from '@/contexts/LanguageContext'
-import { Navigation } from './Navigation'
+import { Navigation } from '../Navigation'
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import {
