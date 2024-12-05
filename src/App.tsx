@@ -1,5 +1,7 @@
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Clipboard, Clock, Search } from 'lucide-react';
+import { Clipboard, Clock, Search } from 'lucide-react';
 import { ThemeToggle } from "@/components/theme-toggle";
 import { LanguageToggle } from "@/components/language-toggle";
 import { useLanguage } from "@/hooks/useLanguage";
@@ -7,8 +9,10 @@ import { useAuth } from "@/hooks/useAuth";
 import { LoginDialog } from "@/components/auth/login-dialog";
 import { SignupDialog } from "@/components/auth/signup-dialog";
 import { PricingCard } from "@/components/pricing-card";
+import PrivacyPolicy from './privacy-policy';
+import TermsOfService from './terms-of-service';
 
-export default function Home() {
+function Home() {
   const { t } = useLanguage();
   const { isAuthenticated, user, logout } = useAuth();
 
@@ -24,37 +28,37 @@ export default function Home() {
 
   return (
     <div className="flex flex-col min-h-screen">
-      <header className="px-4 lg:px-6 h-14 flex items-center">
-        <a className="flex items-center justify-center" href="#">
-          <Clipboard className="h-6 w-6 mr-2" />
-          <span className="font-bold">ClipTrack</span>
-        </a>
-        <nav className="ml-auto flex gap-4 sm:gap-6 items-center">
-          <a className="text-sm font-medium hover:underline underline-offset-4" href="#features">
-            {t('nav.features')}
-          </a>
-          <a className="text-sm font-medium hover:underline underline-offset-4" href="#pricing">
-            {t('nav.pricing')}
-          </a>
-          <ThemeToggle />
-          <LanguageToggle />
-          {isAuthenticated ? (
-            <>
+      <header className="w-full px-4 lg:px-6 h-14 flex items-center justify-between">
+        <div className="container mx-auto flex justify-between items-center">
+          <Link to="/" className="flex items-center justify-center">
+            <Clipboard className="h-6 w-6 mr-2" />
+            <span className="font-bold">ClipTrack</span>
+          </Link>
+          <nav className="flex gap-4 sm:gap-6 items-center">
+            <a className="text-sm font-medium hover:underline underline-offset-4" href="#features">
+              {t('nav.features')}
+            </a>
+            <a className="text-sm font-medium hover:underline underline-offset-4" href="#pricing">
+              {t('nav.pricing')}
+            </a>
+            <ThemeToggle />
+            <LanguageToggle />
+            {isAuthenticated ? (
               <Button variant="ghost" onClick={logout}>
                 {t('nav.logout')}
               </Button>
-            </>
-          ) : (
-            <>
-              <LoginDialog />
-              <SignupDialog />
-            </>
-          )}
-        </nav>
+            ) : (
+              <>
+                <LoginDialog />
+                <SignupDialog />
+              </>
+            )}
+          </nav>
+        </div>
       </header>
       <main className="flex-1">
         <section className="w-full py-12 md:py-24 lg:py-32 xl:py-48">
-          <div className="container px-4 md:px-6">
+          <div className="container mx-auto px-4 md:px-6">
             <div className="flex flex-col items-center space-y-4 text-center">
               <div className="space-y-2">
                 <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl/none">
@@ -68,15 +72,15 @@ export default function Home() {
                 <Button onClick={() => handlePlanSelect('free')}>
                   {t('hero.getStarted')}
                 </Button>
-                <Button variant="outline" href="#features">
-                  {t('hero.learnMore')}
+                <Button variant="outline" asChild>
+                  <a href="#features">{t('hero.learnMore')}</a>
                 </Button>
               </div>
             </div>
           </div>
         </section>
         <section id="features" className="w-full py-12 md:py-24 lg:py-32 bg-gray-100 dark:bg-gray-800">
-          <div className="container px-4 md:px-6">
+          <div className="container mx-auto px-4 md:px-6">
             <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl text-center mb-12">
               {t('features.title')}
             </h2>
@@ -106,7 +110,7 @@ export default function Home() {
           </div>
         </section>
         <section id="pricing" className="w-full py-12 md:py-24 lg:py-32">
-          <div className="container px-4 md:px-6">
+          <div className="container mx-auto px-4 md:px-6">
             <div className="text-center space-y-4 mb-12">
               <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
                 {t('pricing.title')}
@@ -139,17 +143,63 @@ export default function Home() {
           </div>
         </section>
       </main>
-      <footer className="flex flex-col gap-2 sm:flex-row py-6 w-full shrink-0 items-center px-4 md:px-6 border-t">
-        <p className="text-xs text-gray-500 dark:text-gray-400">{t('footer.rights')}</p>
-        <nav className="sm:ml-auto flex gap-4 sm:gap-6">
-          <a className="text-xs hover:underline underline-offset-4" href="#">
-            {t('footer.terms')}
-          </a>
-          <a className="text-xs hover:underline underline-offset-4" href="#">
-            {t('footer.privacy')}
-          </a>
-        </nav>
+      <footer className="w-full py-6 px-4 md:px-6 border-t">
+        <div className="container mx-auto flex flex-col sm:flex-row justify-between items-center">
+          <p className="text-xs text-gray-500 dark:text-gray-400">{t('footer.rights')}</p>
+          <nav className="flex gap-4 sm:gap-6 mt-4 sm:mt-0">
+            <Link to="/privacy-policy" className="text-xs hover:underline underline-offset-4">
+              {t('footer.privacy')}
+            </Link>
+            <Link to="/terms-of-service" className="text-xs hover:underline underline-offset-4">
+              {t('footer.terms')}
+            </Link>
+          </nav>
+        </div>
       </footer>
     </div>
   );
 }
+
+function Layout({ children }: { children: React.ReactNode }) {
+  return (
+    <div className="flex flex-col min-h-screen">
+      <header className="w-full px-4 lg:px-6 h-14 flex items-center justify-between">
+        <div className="container mx-auto flex justify-between items-center">
+          <Link to="/" className="flex items-center justify-center">
+            <Clipboard className="h-6 w-6 mr-2" />
+            <span className="font-bold">ClipTrack</span>
+          </Link>
+        </div>
+      </header>
+      <main className="flex-1">
+        {children}
+      </main>
+      <footer className="w-full py-6 px-4 md:px-6 border-t">
+        <div className="container mx-auto flex flex-col sm:flex-row justify-between items-center">
+          <p className="text-xs text-gray-500 dark:text-gray-400">© 2023 ClipTrack. All rights reserved.</p>
+          <nav className="flex gap-4 sm:gap-6 mt-4 sm:mt-0">
+            <Link to="/privacy-policy" className="text-xs hover:underline underline-offset-4">
+              Privacy Policy
+            </Link>
+            <Link to="/terms-of-service" className="text-xs hover:underline underline-offset-4">
+              Terms of Service
+            </Link>
+          </nav>
+        </div>
+      </footer>
+    </div>
+  );
+}
+
+export default function App() {
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/privacy-policy" element={<Layout><PrivacyPolicy /></Layout>} />
+        <Route path="/terms-of-service" element={<Layout><TermsOfService /></Layout>} />
+      </Routes>
+    </Router>
+  );
+}
+
