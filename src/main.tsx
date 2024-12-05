@@ -7,21 +7,8 @@ import i18n from './i18n'
 import './index.css'
 import App from './App'
 
-const rootElement = document.getElementById('root')
-
-if (rootElement) {
-  createRoot(rootElement).render(
-    <StrictMode>
-      <ErrorBoundary>
-        <I18nextProvider i18n={i18n}>
-          <ThemeProvider>
-            <App />
-          </ThemeProvider>
-        </I18nextProvider>
-      </ErrorBoundary>
-    </StrictMode>
-  )
-} else {
-  console.error('Failed to find the root element')
-}
-
+createRoot(document.getElementById('root')!).render(
+  <StrictMode>
+    <App />
+  </StrictMode>
+);
