@@ -11,18 +11,24 @@ import { SignupDialog } from "@/components/auth/signup-dialog";
 import { PricingCard } from "@/components/pricing-card";
 import PrivacyPolicy from './privacy-policy';
 import TermsOfService from './terms-of-service';
+import { KodepayIntegration } from "./KodepayIntegration"
 
 function Home() {
   const { t } = useLanguage();
   const { isAuthenticated, user, logout } = useAuth();
 
   const handlePlanSelect = (plan: 'free' | 'pro') => {
+    console.log(`Selected plan: ${plan}`);
+    const kodepayIntegration = new KodepayIntegration();
+    kodepayIntegration.handlePayment();
     if (!isAuthenticated) {
       // Show signup dialog
       document.querySelector<HTMLButtonElement>('[data-signup-trigger]')?.click();
     } else if (plan === 'pro' && user?.plan === 'free') {
       // Handle upgrade to pro
-      console.log('Upgrade to pro');
+      console.error('Upgrade to pro');
+      const kodepayIntegration = new KodepayIntegration();
+      kodepayIntegration.handlePayment();
     }
   };
 
