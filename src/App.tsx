@@ -1,27 +1,24 @@
-
+import Hero from './components/AppleHero'
+import Features from './components/AppleFeatures'
+import Testimonials from './components/AppleTestimonials'
+import FAQ from './components/AppleFAQ'
+import CTA from './components/AppleCTA'
+import Footer from './components/AppleFooter'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Layout from './components/Layout'
-import HeroSection from './components/HeroSection'
-import FeaturesSection from './components/FeaturesSection'
-import CommentsSection from './components/CommentsSection'
-import FAQSection from './components/FAQSection'
-import HowItWorksSection from './components/HowItWorksSection'
-import CTASection from './components/CTASection'
-
-function Home() {
-
-
+ function Home() {
   return (
-    <Layout>
-      <HeroSection />
-      <FeaturesSection />
-      <CommentsSection />
-      <FAQSection />
-      <HowItWorksSection />
-      <CTASection />
-    </Layout>
+    <main className="min-h-screen bg-[#f0e6d2] text-[#3a3a3a] font-sans">
+      <Hero />
+      <Features />
+      <Testimonials />
+      <FAQ />
+      <CTA />
+      <Footer />
+    </main>
   )
 }
+
+
 
 
 
