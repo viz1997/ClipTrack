@@ -1,0 +1,82 @@
+---
+import { Image } from "astro:assets";
+import Container from "../shared/Container.astro";
+import Paragraph from "../shared/Paragraph.astro";
+import Title from "../shared/Title.astro";
+import GradiantText from "../shared/GradiantText.astro";
+import myImage from "../../assets/images/dev-with-c-1.webp";
+import { solutions } from "../../utils/data.ts";
+
+type SolutionsProps = {
+  title: string;
+  painPoint: string;
+  agitatepainPoint: string;
+  solution: string;
+  img: ImageMetadata;
+};
+
+export interface Props {
+  className?: string;
+}
+
+const { className } = Astro.props;
+---
+
+<section id="solutions" class={`flex flex-col ${className}`}>
+  {
+    solutions.map((solution: SolutionsProps, index: number) => {
+      const oddIndex = index % 2 === 0;
+      const flexRow = oddIndex ? "midmd:flex-row-reverse" : "midmd:flex-row";
+      const bgColor = oddIndex
+        ? "bg-orange-100 dark:bg-gray-800"
+        : "bg-transparent";
+      return (
+        <div class={`w-100 py-10 md:py-16 ${bgColor}`}>
+          <div
+            class={`flex flex-col gap-6 lg:gap-8 ${flexRow} mx-auto max-w-7xl w-full`}
+          >
+            <div class="flex-1 flex flex-col min-h-[300px] midmd:min-h-[300px] lg:min-h-[300px]">
+              <div class="max-w-md mx-auto w-11/12 flex-1 flex midmd:w-8/12 lg:w-2/3 flex-col">
+                <Title>
+                  <GradiantText>
+                    {solution.title}
+                    <a
+                      href="https://focusee.imobie.com/go/download.php?product=fs&id=5"
+                      class="ml-4 text-lg hover:underline"
+                    >
+                      <font _mstmutation="1" _msttexthash="13865969" _msthash="65">立即使用</font>
+                      <span>&gt;</span>
+                    </a>
+                  </GradiantText>
+                </Title>
+                <Paragraph className="mt-3 font-medium text-lg md:text-2xl whitespace-pre-line">
+                  {solution.painPoint}
+                </Paragraph>
+                <Paragraph className="mt-3 font-medium text-lg md:text-2xl whitespace-pre-line">
+                  {solution.agitatepainPoint}
+                </Paragraph>
+                <Paragraph className="mt-3 font-medium text-lg md:text-2xl whitespace-pre-line">
+                  {solution.solution}
+                </Paragraph>
+              </div>
+            </div>
+
+            <div class="flex-1 flex min-h-[300px] midmd:min-h-[300px] lg:min-h-[300px]">
+              <div class="max-w-md mx-auto midmd:max-w-none lg:mx-0 lg:pr-10 xl:pr-2 flex-1 flex w-11/12 midmd:w-5/12 lg:w-1/2 midmd:h-auto">
+                <div class="w-full aspect-w-16 aspect-h-9 relative">
+                  <Image
+                    src={solution.img}
+                    alt="banner image"
+                    width="1240"
+                    height="1585"
+                    class="w-auto left-1/2 -translate-x-1/2 absolute bottom-0 max-h-full rounded-3xl object-cover"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      );
+    })
+  }
+</section>
