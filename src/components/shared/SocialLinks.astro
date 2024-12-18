@@ -5,7 +5,7 @@ import { socialLinks } from "../../utils/data.ts";
 <div class="min-h-max flex items-center gap-4 text-heading-3 mt-8">
   {
     socialLinks.map(({ icon, svg, href }) => (
-      <a href={href} class="transition hover:text-heading-1 hover:scale-105">
+      <a href={href} target="_blank" class="transition hover:text-heading-1 hover:scale-105">
        <span set:html={svg} />
         <span class="sr-only">{icon}</span>
       </a>
