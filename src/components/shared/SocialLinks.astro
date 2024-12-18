@@ -4,20 +4,27 @@ import { socialLinks } from "../../utils/data.ts";
 
 <div class="min-h-max flex items-center gap-4 text-heading-3 mt-8">
   {
-    socialLinks.map(({ icon, path, href }) => (
+    socialLinks.map(({ icon, svg, href }) => (
       <a href={href} class="transition hover:text-heading-1 hover:scale-105">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="16"
-          height="16"
-          fill="currentColor"
-          class="w-5 h-5"
-          viewBox="0 0 16 16"
-        >
-          <path d={path}></path>
-        </svg>
+       <span set:html={svg} />
         <span class="sr-only">{icon}</span>
       </a>
     ))
   }
 </div>
+<style>
+  a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  svg {
+    width: 32;
+    height: 32;
+    fill: currentColor;
+  
+    viewBox: "0 0 1024 1024";
+
+  }
+</style>
