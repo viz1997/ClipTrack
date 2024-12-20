@@ -3,8 +3,16 @@ import Container from "../shared/Container.astro";
 import Paragraph from "../shared/Paragraph.astro";
 import Title from "../shared/Title.astro";
 
-import { faqs } from "../../utils/data.ts";
+
 import GradiantText from "../shared/GradiantText.astro";
+import { ui, defaultLang, languages } from '../../i18n/ui';
+import { getLangFromUrl, useTranslations } from '../../i18n/utils';
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+// 获取当前语言的 solutions 数据
+const faqs = ui[lang]?.faqs || ui[defaultLang].faqs;
+
 
 type FAQProps = {
   question: string;
@@ -21,7 +29,7 @@ const { className } = Astro.props;
 <section id="faq" class=`${className}`>
   <Container className="">
     <div class="text-center  max-w-3xl mx-auto">
-      <Title> Frequenty Asked <GradiantText>Questions</GradiantText></Title>
+      <Title> {t("faq.title")} </GradiantText></Title>
     </div>
 
     <div

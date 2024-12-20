@@ -4,8 +4,8 @@ import Container from "../shared/Container.astro";
 import Paragraph from "../shared/Paragraph.astro";
 import Title from "../shared/Title.astro";
 import GradiantText from "../shared/GradiantText.astro";
-import { getLangFromUrl, useTranslations } from '../i18n/utils';
-import { languages } from '../i18n/config';
+import { getLangFromUrl, useTranslations } from '../../i18n/utils';
+import { languages } from '../../i18n/config';
 
 
 const lang = getLangFromUrl(Astro.url);
@@ -27,19 +27,19 @@ const testimonials = [
   {
     name: "Emily Brown",
     position: t("say1.job"),
-    content: "As a content creator, I need to manage a lot of clipboard content quickly. ClipTrack allows me to easily search, organize, and manage my clipboard content.",
+    content: t("say1.description"),
     image: image1, // 使用导入的图像对象
   },
   {
     name: "Sophia Chen",
-    position: "Freelance Designer",
-    content: "I love how ClipTrack integrates seamlessly into my workflow. The sidebar mode doesn't obstruct my main content, and the ability to quickly search and manage clipboard items is a huge time-saver. Highly recommended!",
+    position: t("say2.job"),
+    content: t("say2.description"),
     image: image2, // 使用导入的图像对象
   },
   {
     name: "John Doe",
-    position: "Software Developer",
-    content: "ClipTrack's ability to preserve original web links and include accurate timestamps is a lifesaver. It helps me track and manage my clipboard history with precision!",
+    position: t("say3.job"),
+    content: t("say3.description"),
     image: image3, // 使用导入的图像对象
   },
 ];
@@ -55,7 +55,7 @@ const { className } = Astro.props;
   <Container className="">
     <div class="text-center max-w-3xl mx-auto">
       <Title>
-        What Our <GradiantText>Clients Say</GradiantText>
+    <GradiantText>{t("say.title")}</GradiantText>
       </Title>
     </div>
     <div class="flex flex-row flex-wrap mt-8">

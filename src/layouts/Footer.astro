@@ -5,7 +5,18 @@ import FooterNav from "../components/shared/FooterNav.astro";
 import Paragraph from "../components/shared/Paragraph.astro";
 import FooterBackground from "../components/blocks/FooterBackground.astro";
 import SocialLinks from "../components/shared/SocialLinks.astro";
-import { footerProduct, footerSupport, footerLegal } from "../utils/data.ts";
+import { ui, defaultLang, languages } from '../i18n/ui';
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+import { languages } from '../i18n/config';
+
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+// 获取当前语言的 footer 数据
+const footerSupport = ui[lang]?.footerSupport || ui[defaultLang].footerSupport;
+const footerProduct = ui[lang]?.footerProduct || ui[defaultLang].footerProduct;
+const footerLove = ui[lang]?.footerLove || ui[defaultLang].footerLove;
+
 ---
 
 <div class="relative mt-16">
@@ -22,16 +33,16 @@ import { footerProduct, footerSupport, footerLegal } from "../utils/data.ts";
               </div>
             </a>
             <Paragraph className="mt-8">
-              专为浏览器使用者提升复制粘贴体验
+              {t("footer.title")}
             </Paragraph>
           </div>
           <SocialLinks />
         </div>
 
         <GroupFooterNav>
-          <FooterNav title="Product" navItems={footerProduct} />
-          <FooterNav title="Support" navItems={footerSupport} />
-          <FooterNav title="Ressources" navItems={footerLegal} />
+          <FooterNav title={t("footer.product")} navItems={footerProduct} />
+          <FooterNav title={t("footer.support")} navItems={footerSupport} />
+          <FooterNav title={t("footer.love")} navItems={footerLove} />
         </GroupFooterNav>
       </div>
     </Container>
