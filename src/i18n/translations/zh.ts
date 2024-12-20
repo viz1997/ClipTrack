@@ -1,13 +1,13 @@
 export default {
   'nav.home': '首页',
   'nav.about': '关于',
-  'nav.fqa': '服务',
+  'nav.howitworks': '如何使用',
   'nav.features': '功能',
   'nav.faq': '常见问题',
-  'cta.getStarted': '开始使用',
+  'nav.getStarted': '开始使用',
   
-  'Home.title': '像专业人士一样管理你的剪贴板',
-  'Home.description': 'ClipTrack 是一款智能剪贴板管理器，可帮助您提高工作效率并组织您的数字生活',
+  'hero.title': '像专业人士一样管理你的剪贴板',
+  'hero.description': 'ClipTrack 是一款智能剪贴板管理器，可帮助您提高工作效率并组织您的数字生活',
 
   'features.title': '为什么选择ClipTrack？',
   'features1.subtitle': '智能剪贴',

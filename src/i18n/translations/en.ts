@@ -1,10 +1,14 @@
 export default {
   'nav.home': 'Home',
   'nav.about': 'About',
-  'nav.services': 'Services',
+ 'nav.howitworks': 'How It Works',
   'nav.features': 'Features',
   'nav.faq': 'FAQ',
   'cta.getStarted': 'Get Started',
+
+
+  
+
   
   'welcome.title': 'Welcome to Astro',
   'welcome.description': 'To get started, open the directory',

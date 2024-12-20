@@ -20,24 +20,24 @@ const t = useTranslations(lang);
 const navItems = [
   {
     href: "#",
-    text: "Home",
-  },
-  {
-    href: "#services",
-    text: "How It Works",
+    text: t("nav.home"),
   },
   {
     href: "#features",
-    text: "Features",
+    text: t("nav.howitworks"),
+  },
+  {
+    href: "#features",
+    text: t("nav.features"),
   },
 
     {
     href: "#about",
-    text: "About",
+    text: t("nav.about"),
   },
   {
     href: "#faq",
-    text: "FAQ",
+    text: t("nav.faq"),
   },
 
 ];
@@ -93,7 +93,7 @@ const navItems = [
           class="lg:min-w-max flex items-center sm:w-max w-full pb-6 lg:pb-0 border-b border-box-bg lg:border-0 px-6 lg:px-0"
         >
           <BtnLink
-            text="Get Started"
+            text={t("nav.getStarted")}
             href="#cta"
             className="flex justify-center w-full sm:w-max"
             variant="primary"

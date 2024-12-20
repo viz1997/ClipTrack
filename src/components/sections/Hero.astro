@@ -8,6 +8,12 @@ import myHeroImage3 from "../../assets/images/hero3.png";
 
 
 import GradiantText from "../shared/GradiantText.astro";
+import { getLangFromUrl, useTranslations } from '../../i18n/utils';
+import { languages } from '../../i18n/config';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
 
 export interface Props {
   className?: string;
@@ -27,10 +33,10 @@ const { className } = Astro.props;
              font-bold text-heading-1"
       >
         <GradiantText>ClipTrack <br /> </GradiantText>
-        Manage Your Clipboard Like a Pro
+        {t("hero.title")}
       </h1>
       <Paragraph className="mt-8 ">
-        ClipTrack is the intelligent clipboard manager that helps you boost your productivity and organize your digital life.
+        {t("hero.description")}
       </Paragraph>
 
   

@@ -3,7 +3,13 @@ import Service from "../cards/Service.astro";
 import Container from "../shared/Container.astro";
 import Paragraph from "../shared/Paragraph.astro";
 import Title from "../shared/Title.astro";
-import { services } from "../../utils/data.ts";
+import { ui, defaultLang, languages } from '../../i18n/ui';
+import { getLangFromUrl, useTranslations } from '../../i18n/utils';
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+// 获取当前语言的 solutions 数据
+const services = ui[lang]?.services || ui[defaultLang].services;
 
 type ServicesProps = {
   title: string;
@@ -45,16 +51,16 @@ const { className } = Astro.props;
   ></span>
   <Container className="space-y-10 md:sapce-y-12">
     <div class="text-center max-w-3xl mx-auto space-y-4">
-      <Title className="">Why Choose ClipTrack?</Title>
+      <Title className="">{t("features.title")}</Title>
     </div>
     <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
       {
         services.map((service: ServicesProps) => {
           return (
             <Service
-              title={service.title}
-              features={service.features}
-              icon={service.icon}
+               title={service.title}
+          features={service.features}
+          icon={service.icon}
             />
           );
         })

@@ -1,7 +1,8 @@
 export default {
   'nav.home': 'ホーム',
   'nav.about': '概要',
-  'nav.services': 'サービス',
+  'nav.howitworks': 'サービス',
+ 
   'nav.features': '機能',
   'nav.faq': 'よくある質問',
   'cta.getStarted': '始める',

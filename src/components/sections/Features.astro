@@ -4,6 +4,12 @@ import Container from "../shared/Container.astro";
 import Paragraph from "../shared/Paragraph.astro";
 import Title from "../shared/Title.astro";
 import GradiantText from "../shared/GradiantText.astro";
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+import { languages } from '../i18n/config';
+
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 
 // 导入所有需要的图像
 import image1 from "../../assets/images/user1.jpg";
@@ -20,7 +26,7 @@ type TestimonialProps = {
 const testimonials = [
   {
     name: "Emily Brown",
-    position: "Content Creator",
+    position: t("say1.job"),
     content: "As a content creator, I need to manage a lot of clipboard content quickly. ClipTrack allows me to easily search, organize, and manage my clipboard content.",
     image: image1, // 使用导入的图像对象
   },

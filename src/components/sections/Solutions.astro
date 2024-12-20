@@ -5,8 +5,13 @@ import Paragraph from "../shared/Paragraph.astro";
 import Title from "../shared/Title.astro";
 import GradiantText from "../shared/GradiantText.astro";
 import myImage from "../../assets/images/dev-with-c-1.webp";
-import { solutions } from "../../utils/data.ts";
+import { ui, defaultLang, languages } from '../../i18n/ui';
+import { getLangFromUrl, useTranslations } from '../../i18n/utils';
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 
+// 获取当前语言的 solutions 数据
+const solutions = ui[lang]?.solutions || ui[defaultLang].solutions;
 type SolutionsProps = {
   title: string;
   painPoint: string;
@@ -39,7 +44,7 @@ const { className } = Astro.props;
               <div class="max-w-md mx-auto w-11/12 flex-1 flex midmd:w-8/12 lg:w-2/3 flex-col">
                 <Title>
                   <GradiantText>
-                    {solution.title}
+               {solution.title}
                     <a
                       href="https://focusee.imobie.com/go/download.php?product=fs&id=5"
                       class="ml-4 text-lg hover:underline"
