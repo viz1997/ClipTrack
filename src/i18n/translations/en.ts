@@ -71,19 +71,19 @@ export default {
         image: image1,
         name: 'Emily Brown',
         job: 'Content Creator',
-        description: 'As a content creator, I need to manage a lot of clipboard content quickly. ClipTrack allows me to easily search, organize, and manage my clipboard content!',
+        content: 'As a content creator, I need to manage a lot of clipboard content quickly. ClipTrack allows me to easily search, organize, and manage my clipboard content!',
       },
       {
         image: image2,
         name: 'Sophia Chen',
         job: 'Freelance Designer',
-        description: "I love how ClipTrack integrates seamlessly into my workflow. The sidebar mode doesn't obstruct my main content, and the ability to quickly search and manage clipboard items is a huge time-saver. Highly recommended!",
+        content: "I love how ClipTrack integrates seamlessly into my workflow. The sidebar mode doesn't obstruct my main content, and the ability to quickly search and manage clipboard items is a huge time-saver. Highly recommended!",
       },
       {
         image: image3,
         name: 'John Doe',
         job: 'Software Developer',
-        description: "ClipTrack's ability to preserve original web links and include accurate timestamps is a lifesaver. It helps me track and manage my clipboard history with precision!",
+        content: "ClipTrack's ability to preserve original web links and include accurate timestamps is a lifesaver. It helps me track and manage my clipboard history with precision!",
       },
 
     
@@ -193,8 +193,6 @@ export default {
 
   ],
   footerLove: [
-    { itemText: "WeChat Pay", itemLink: "#" },
-    { itemText: "WeChat Pay", itemLink: "#" },
     { itemText: "WeChat Pay", itemLink: "#" },
   ],
 
