@@ -24,6 +24,7 @@ const socialLinks = [
     href: "https://i.stardots.ink/wenze/wechat.jpg?width=500&rotate=0&blur=0&quality=50"
   }
 ];
+const url = {}
 
 
 
