@@ -5,17 +5,21 @@ import FooterNav from "../components/shared/FooterNav.astro";
 import Paragraph from "../components/shared/Paragraph.astro";
 import FooterBackground from "../components/blocks/FooterBackground.astro";
 import SocialLinks from "../components/shared/SocialLinks.astro";
-import { ui, defaultLang, languages } from '../i18n/ui';
+
+import { ui, defaultLang } from '../i18n/ui';
 import { getLangFromUrl, useTranslations } from '../i18n/utils';
-import { languages } from '../i18n/config';
+
 
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 // 获取当前语言的 footer 数据
-const footerSupport = ui[lang]?.footerSupport || ui[defaultLang].footerSupport;
-const footerProduct = ui[lang]?.footerProduct || ui[defaultLang].footerProduct;
-const footerLove = ui[lang]?.footerLove || ui[defaultLang].footerLove;
+const footerSupport = t("footerSupport");
+const footerProduct = t("footerProduct");
+const footerLove = t("footerLove");
+const product = t("footer.product");
+const support = t("footer.support");
+const love = t("footer.love");
 
 ---
 
@@ -40,9 +44,9 @@ const footerLove = ui[lang]?.footerLove || ui[defaultLang].footerLove;
         </div>
 
         <GroupFooterNav>
-          <FooterNav title={t("footer.product")} navItems={footerProduct} />
-          <FooterNav title={t("footer.support")} navItems={footerSupport} />
-          <FooterNav title={t("footer.love")} navItems={footerLove} />
+          <FooterNav title={t("footer.product")}  navItems={footerProduct} />
+          <FooterNav title={support} navItems={footerSupport} />
+          <FooterNav title={love} navItems={footerLove} />
         </GroupFooterNav>
       </div>
     </Container>
