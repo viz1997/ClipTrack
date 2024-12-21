@@ -1,5 +1,6 @@
 ---
 import Button from "../shared/Button.astro";
+import BtnLink from "../shared/BtnLink.astro";
 import Container from "../shared/Container.astro";
 import GradiantText from "../shared/GradiantText.astro";
 import Paragraph from "../shared/Paragraph.astro";
@@ -36,9 +37,16 @@ const { className } = Astro.props;
          { t("ready.description") }
         </Paragraph>
         <div class="mx-auto max-w-md sm:max-w-xl pt-10">
-          <Button variant={"primary"} className={"min-w-max text-white"}>
-            <span class="flex relative z-[5] text-center">{t("nav.getStarted")}</span>
-          </Button>
+    
+
+             <BtnLink
+            text={t("nav.getStarted")}
+            href="https://microsoftedge.microsoft.com/addons/detail/caafacpmhlfagbkmnmeelkpiggeackhl"
+            target="_blank"
+      
+            className="min-w-max text-white justify-center w-full "
+            variant="primary"
+          />
         </div>
       </div>
     </div>

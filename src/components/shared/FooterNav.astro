@@ -1,28 +1,39 @@
 ---
-export interface Props{
-    title:string,
-    navItems:{
-        itemText:string,
-        itemLink:string
-    }[]
+export interface Props {
+  title: string;
+  navItems: {
+    itemText: string;
+    itemLink: string;
+    image?: string;
+    target?: string; // 新增 target 参数
+  }[];
 }
 
-const {title, navItems} = Astro.props
+const { title, navItems } = Astro.props;
 ---
 
 <nav class="space-y-6">
-    <h2 class="capitalze font-semibold text-heading-1 text-xl">
-        {title}
-    </h2>
-    <ul class="space-y-3 font-medium md:text-lg text-heading-3">
-        {navItems.map((navItem)=>(
-            <li>
-                <a href={navItem.itemLink} class="transition hover:text-primary">
-                    {navItem.itemText}
-                </a>
-            </li>
-        ))
-
-        }
-    </ul>
+  <h2 class="capitalize font-semibold text-heading-1 text-xl">
+    {title}
+  </h2>
+  <ul class="space-y-3 font-medium md:text-lg text-heading-3">
+    {navItems.map((navItem) => (
+      <li>
+        <a
+          href={navItem.itemLink}
+          class="transition hover:text-primary flex items-center gap-2"
+          target={navItem.target || "_self"} 
+        >
+          {navItem.image && (
+            <img
+              src={navItem.image}
+              alt={navItem.itemText}
+              class="w-auto h-9" 
+            />
+          )}
+          {navItem.itemText}
+        </a>
+      </li>
+    ))}
+  </ul>
 </nav>

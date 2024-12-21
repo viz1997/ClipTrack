@@ -1,0 +1,105 @@
+---
+import Container from "../../components/shared/Container.astro";
+import Layout from "../../layouts/Layout.astro";
+import { ui, defaultLang, languages } from '../../i18n/ui';
+import { getLangFromUrl, useTranslations } from '../../i18n/utils';
+import { languages } from '../../i18n/config';
+
+// Define the dynamic language parameter
+export async function getStaticPaths() {
+  return Object.keys(languages).map((lang) => ({
+    params: { lang }, // The dynamic parameter (e.g., "en", "zh")
+    props: { lang }, // Pass the language as a prop
+  }));
+}
+const lang = getLangFromUrl(Astro.url); // 获取当前语言
+const t = useTranslations(lang); // 使用翻译函数
+
+const lastUpdated = "2024.12.21"
+---
+
+<Layout title={t("privacyPolicy.title")}>
+  <Container>
+    <div class="py-20">
+      <div class="max-w-4xl mx-auto">
+        <h1 class="text-4xl font-bold mb-4 text-gray-900 dark:text-white">{t("privacyPolicy.title")}</h1>
+        <p class="text-gray-600 dark:text-gray-400 mb-8">{t("privacyPolicy.lastUpdated")}: {lastUpdated}</p>
+        
+        <div class="space-y-8 text-gray-700 dark:text-gray-300">
+          <!-- 1. 引言 -->
+          <section>
+            <h2 class="text-2xl font-semibold mb-4 text-gray-800 dark:text-gray-100">{t("privacyPolicy.introduction.title")}</h2>
+            <p class="mb-4">{t("privacyPolicy.introduction.content")}</p>
+          </section>
+
+          <!-- 2. 我们收集的信息 -->
+          <section>
+            <h2 class="text-2xl font-semibold mb-4 text-gray-800 dark:text-gray-100">{t("privacyPolicy.informationWeCollect.title")}</h2>
+            <p class="mb-4">{t("privacyPolicy.informationWeCollect.content")}</p>
+            <ul class="list-disc pl-6 space-y-2">
+              {t("privacyPolicy.informationWeCollect.items").map((item) => (
+                <li>
+                  <strong class="text-gray-900 dark:text-gray-100">{item.title}:</strong> {item.description}
+                </li>
+              ))}
+            </ul>
+          </section>
+
+          <!-- 3. 我们如何使用您的信息 -->
+          <section>
+            <h2 class="text-2xl font-semibold mb-4 text-gray-800 dark:text-gray-100">{t("privacyPolicy.howWeUseYourInformation.title")}</h2>
+            <p class="mb-4">{t("privacyPolicy.howWeUseYourInformation.content")}</p>
+            <ul class="list-disc pl-6 space-y-2">
+              {t("privacyPolicy.howWeUseYourInformation.items").map((item) => (
+                <li>
+                  <strong class="text-gray-900 dark:text-gray-100">{item.title}:</strong> {item.description}
+                </li>
+              ))}
+            </ul>
+          </section>
+
+          <!-- 4. 我们如何保护您的信息 -->
+          <section>
+            <h2 class="text-2xl font-semibold mb-4 text-gray-800 dark:text-gray-100">{t("privacyPolicy.howWeProtectYourInformation.title")}</h2>
+            <p class="mb-4">{t("privacyPolicy.howWeProtectYourInformation.content")}</p>
+            <ul class="list-disc pl-6 space-y-2">
+              {t("privacyPolicy.howWeProtectYourInformation.items").map((item) => (
+                <li>
+                  <strong class="text-gray-900 dark:text-gray-100">{item.title}:</strong> {item.description}
+                </li>
+              ))}
+            </ul>
+          </section>
+
+          <!-- 5. 您的权利 -->
+          <section>
+            <h2 class="text-2xl font-semibold mb-4 text-gray-800 dark:text-gray-100">{t("privacyPolicy.yourRights.title")}</h2>
+            <p class="mb-4">{t("privacyPolicy.yourRights.content")}</p>
+            <ul class="list-disc pl-6 space-y-2">
+              {t("privacyPolicy.yourRights.items").map((item) => (
+                <li>
+                  <strong class="text-gray-900 dark:text-gray-100">{item.title}:</strong> {item.description}
+                </li>
+              ))}
+            </ul>
+          </section>
+
+          <!-- 6. 隐私政策的变更 -->
+          <section>
+            <h2 class="text-2xl font-semibold mb-4 text-gray-800 dark:text-gray-100">{t("privacyPolicy.policyChanges.title")}</h2>
+            <p class="mb-4">{t("privacyPolicy.policyChanges.content")}</p>
+          </section>
+
+          <!-- 7. 联系我们 -->
+          <section>
+            <h2 class="text-2xl font-semibold mb-4 text-gray-800 dark:text-gray-100">{t("privacyPolicy.contactUs.title")}</h2>
+            <p>{t("privacyPolicy.contactUs.content")}</p>
+            <div class="mt-4 p-4 bg-gray-100 dark:bg-gray-800 rounded-lg">
+              <p class="mb-2"><strong class="text-gray-900 dark:text-gray-100">邮箱：</strong> <a href={`mailto:${t("privacyPolicy.contactUs.email")}`} class="text-primary hover:underline">{t("privacyPolicy.contactUs.email")}</a></p>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+  </Container>
+</Layout>

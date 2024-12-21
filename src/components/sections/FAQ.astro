@@ -15,8 +15,8 @@ const faqs = ui[lang]?.faqs || ui[defaultLang].faqs;
 
 
 type FAQProps = {
-  question: string;
-  answer: string;
+  title: string;
+  questions: [];
 };
 
 export interface Props {
@@ -29,14 +29,14 @@ const { className } = Astro.props;
 <section id="faq" class=`${className}`>
   <Container className="">
     <div class="text-center  max-w-3xl mx-auto">
-      <Title> {t("faq.title")} </GradiantText></Title>
+      <Title> {t("faqs.title")} </GradiantText></Title>
     </div>
 
     <div
       class="grid border rounded-3xl border-box-border border-box-bg bg-box-bg shadow-lg divide-y divide-slate-200 dark:divide-slate-800 max-w-3xl mx-auto mt-8 overflow-hidden"
     >
       {
-        faqs.map((faq: FAQProps) => {
+        faqs.questions.map((faq: FAQProps) => {
           return (
             <div class="py-5 px-5 hover:bg-slate-200 dark:hover:bg-slate-800">
               <details class="group">

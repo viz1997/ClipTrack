@@ -21,9 +21,15 @@ const product = t("footer.product");
 const support = t("footer.support");
 const love = t("footer.love");
 
+
+const footerLoveWithImages = [
+  { itemText: "WeChat Pay", itemLink: "https://i.stardots.ink/wenze/WeChat Pay.jpg?width=500&rotate=0&blur=0&quality=100", target: "_blank"}, // 添加图片 URL
+  { itemText: "", itemLink: "https://buymeacoffee.com/wenze", image: "https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png", target: "_blank"}, // 添加图片 URL
+  { itemText: "", itemLink: "https://ko-fi.com/wenze", image: "https://storage.ko-fi.com/cdn/kofi6.png", target: "_blank" }, // 添加图片 URL
+];
 ---
 
-<div class="relative mt-16">
+<div id="about"  class="relative mt-16">
   <FooterBackground />
   
   <footer class="relative bg-gradient-to-tr from-slate-100/85 to-zinc-200/85 dark:from-slate-800/85 dark:to-zinc-800/85 pt-28 rounded-t-3xl backdrop-blur-md">
@@ -44,9 +50,9 @@ const love = t("footer.love");
         </div>
 
         <GroupFooterNav>
-          <FooterNav title={t("footer.product")}  navItems={footerProduct} />
+          <FooterNav title={product} navItems={footerProduct} />
           <FooterNav title={support} navItems={footerSupport} />
-          <FooterNav title={love} navItems={footerLove} />
+          <FooterNav title={love} navItems={footerLoveWithImages} />
         </GroupFooterNav>
       </div>
     </Container>
@@ -62,3 +68,5 @@ const love = t("footer.love");
     </div>
   </footer>
 </div>
+
+<script src="https://www.feedbase.co/widget/v2.js" data-widget="3d3a7933-d026-47b3-8a41-5870e34706e1"></script>

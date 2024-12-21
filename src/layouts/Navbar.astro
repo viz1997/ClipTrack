@@ -19,27 +19,22 @@ const t = useTranslations(lang);
 
 const navItems = [
   {
-    href: "#",
+    href: `/${lang}/`, // 动态生成链接
     text: t("nav.home"),
   },
+
   {
-    href: "#features",
-    text: t("nav.howitworks"),
-  },
-  {
-    href: "#features",
+    href: `/${lang}#features`,
     text: t("nav.features"),
   },
-
-    {
-    href: "#about",
-    text: t("nav.about"),
-  },
   {
-    href: "#faq",
+    href: `/${lang}#faq`,
     text: t("nav.faq"),
   },
-
+ {
+    href: `/${lang}#about`,
+    text: t("nav.about"),
+  },
 ];
 
 
@@ -94,7 +89,8 @@ const navItems = [
         >
           <BtnLink
             text={t("nav.getStarted")}
-            href="#cta"
+            href="https://microsoftedge.microsoft.com/addons/detail/caafacpmhlfagbkmnmeelkpiggeackhl"
+            target="_blank"
             className="flex justify-center w-full sm:w-max"
             variant="primary"
           />

@@ -1,186 +1,297 @@
-
 import visibilityDilemma from "../../assets/images/visibility-dilemma.png";
 import engagementGap from "../../assets/images/engagement-gap.png";
 import resultsInHibernation from "../../assets/images/results-in-hibernation.gif";
+// すべての必要な画像をインポート
+import image1 from "../../assets/images/user1.jpg";
+import image2 from "../../assets/images/user2.jpg";
+import image3 from "../../assets/images/user3.jpg";
+
 export default {
-  'nav.home': 'Home',
-  'nav.about': 'About',
- 'nav.howitworks': 'How It Works',
-  'nav.features': 'Features',
-  'nav.faq': 'FAQ',
-  'nav.getStarted': 'Get Started',
-
-  'hero.title': 'Manage Your Clipboard Like a Pro',
-  'hero.description': 'ClipTrack is the intelligent clipboard manager that helps you boost your productivity and organize your digital life.',
-
-  'features.title': 'Why Choose ClipTrack?',
-  'features1.subtitle': '智能剪贴',
-  'features1.description': '自动保存您复制的文本、链接和图片',
-  'features2.subtitle': '快速搜索',
-  'features2.description': '轻松查找和管理您保存的所有内容',
-  'features3.subtitle': '源链接保存',
-  'features3.description': '自动记录内容的来源网页，方便回溯',
-
-  'say.title': 'What Our Clients Say',
-  'say1.name': 'Emily Brown',
-  'say1.job': 'Content Creator',
-  'say1.description': 'As a content creator, I need to manage a lot of clipboard content quickly. ClipTrack allows me to easily search, organize, and manage my clipboard content!',
-
-  'say2.name': 'Sophia Chen',
-  'say2.job': 'Freelance Designer',
-  'say2.description': "I love how ClipTrack integrates seamlessly into my workflow. The sidebar mode doesn't obstruct my main content, and the ability to quickly search and manage clipboard items is a huge time-saver. Highly recommended!",
+  nav: {
+    home: 'ホーム',
+    about: '私たちに関しては',
+    howitworks: '使い方',
+    features: '機能',
+    faq: 'よくある質問',
+    getStarted: '今すぐ使う',
+  },
   
-  'say3.name': 'John Doe',
-  'say3.job': 'Software Developer',
-  'say3.description': "ClipTrack's ability to preserve original web links and include accurate timestamps is a lifesaver. It helps me track and manage my clipboard history with precision!",
+  hero: {
+    title: 'プロのようにクリップボードを管理する',
+    description: 'ClipTrackは、あなたの生産性を向上させ、デジタルライフを整理するためのスマートクリップボードマネージャーです。',
+  },
 
-  'about1.title': 'Floating Window & Sidebar',
-  'about1.description': 'ClipTrack 会自动记录您复制到剪贴板的内容，以便您随时访问',
+  testimonials: {
+    title: 'お客様の声',
+    items: [
+      {
+        image: image1,
+        name: 'Emily Brown',
+        job: 'コンテンツクリエイター',
+        content: 'コンテンツクリエイターとして、大量のクリップボードコンテンツを迅速に管理する必要があります。ClipTrackは、クリップボードコンテンツを簡単に検索、整理、管理できるようにしてくれます！',
+      },
+      {
+        image: image2,
+        name: 'Sophia Chen',
+        job: 'フリーランスデザイナー',
+        content: 'ClipTrackが私のワークフローにシームレスに統合される方法が大好きです。サイドバーモードはメインコンテンツを妨げず、クリップボード項目を迅速に検索および管理できるため、時間を大幅に節約できます。強くお勧めします！',
+      },
+      {
+        image: image3,
+        name: 'John Doe',
+        job: 'ソフトウェア開発者',
+        content: 'ClipTrackが元のWebページリンクを保持し、正確なタイムスタンプを含める機能は素晴らしいです。クリップボード履歴を正確に追跡および管理するのに役立ちます！',
+      },
+    ],
+  },
 
-  'about2.title': 'Easy to Use',
-  'about2.description': '为剪贴板内容添加标签，以便您可以根据需要快速查找',
-
-  'about3.title': 'Seamless and Efficient Recording',
-  'about3.description': '使用强大的搜索功能，快速找到您需要的剪贴板内容',
-
- 
-  'faq.title': '常见问题',
-  'faq1.question': 'ClipTrack 是什么？',
-  'faq1.answer': 'ClipTrack 是一款智能剪贴板管理工具，旨在帮助用户提升生产力并组织数字生活。它允许用户轻松搜索、整理和管理剪贴板内容，支持浮动窗口和侧边栏模式，提供无缝记录功能，并保留原始网页链接和时间戳。',
-
-  'faq2.question': 'ClipTrack 支持哪些浏览器？',
-  'faq2.answer': 'ClipTrack支持所有主流浏览器，包括但不限于Chrome、Firefox、Safari、Edge等。我们致力于为用户提供跨平台、无缝的剪贴板管理体验。',
-
-  'faq3.question': '我的剪贴内容安全吗？',
-  'faq3.answer': 'ClipTrack非常重视您的隐私和数据安全。我们采用端到端加密技术，确保您的剪贴内容在传输和存储过程中得到严格保护。同时，我们严格遵守相关法律法规，确保您的数据安全。',
-
-  'faq4.question': '如何使用 ClipTrack 的浮动窗口模式？',
-  'faq4.answer': '浮动窗口模式允许用户将剪贴板管理器固定在屏幕的任意位置，方便随时访问。只需在设置中启用浮动窗口模式，即可调整窗口位置和大小，享受灵活的操作体验。',
-
-  'faq5.question': 'ClipTrack 是否支持多设备同步？',
-  'faq5.answer': '目前 ClipTrack 不支持多设备同步功能，但我们正在开发此功能，预计将在未来的版本中推出。',
-
-
-  'ready.title': '准备好提升复制粘贴体验了吗？',
-  'ready.description': '立即立即使用ClipTrack, 体验智能剪贴板带来的便利!',
+  ready: {
+    title: 'クリップボード体験を向上させる準備はできましたか？',
+    description: '今すぐClipTrackを使用して、スマートクリップボードの利便性を体験してください！',
+  },
   
-  'footer.title': '专为浏览器使用者提升复制粘贴体验',
-  'footer.privacy': '隐私政策',
-  'footer.terms': '服务条款',
-  'footer.contact': '联系我们',
-  'footer.feedback': '反馈建议',
-  'footer.github': 'GitHub',
-  'footer.discord': 'Discord',
-  'footer.twitter': 'Twitter',
+  footer: {
+    title: 'ブラウザユーザーのためのクリップボード体験を向上させる',
+    privacy: 'プライバシーポリシー',
+    terms: '利用規約',
+    contact: 'お問い合わせ',
+    feedback: 'フィードバック',
+    github: 'GitHub',
+    discord: 'Discord',
+    twitter: 'Twitter',
+    product: '製品',
+    support: 'サポート',
+    love: '製品をサポート❤️',
+  },
 
-  'footer.product': 'Product',
-  'footer.support': 'support',
-  'footer.love': 'Love❤️',
-
-
-  services: [
-    {
-      title: "智能剪贴",
-      features: [
-        "自动保存您复制的文本、链接和图片",
-      
-      ],
-      icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" stroke-width="1.5" fill="currentColor" class="w-6 h-6"><path d="M256 0c17.7 0 32 14.3 32 32V42.4c93.7 13.9 167.7 88 181.6 181.6H480c17.7 0 32 14.3 32 32s-14.3 32-32 32H469.6c-13.9 93.7-88 167.7-181.6 181.6V480c0 17.7-14.3 32-32 32s-32-14.3-32-32V469.6C130.3 455.7 56.3 381.7 42.4 288H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H42.4C56.3 130.3 130.3 56.3 224 42.4V32c0-17.7 14.3-32 32-32zM107.4 288c12.5 58.3 58.4 104.1 116.6 116.6V384c0-17.7 14.3-32 32-32s32 14.3 32 32v20.6c58.3-12.5 104.1-58.4 116.6-116.6H384c-17.7 0-32-14.3-32-32s14.3-32 32-32h20.6C392.1 165.7 346.3 119.9 288 107.4V128c0 17.7-14.3 32-32 32s-32-14.3-32-32V107.4C165.7 119.9 119.9 165.7 107.4 224H128c17.7 0 32 14.3 32 32s-14.3 32-32 32H107.4zM256 224a32 32 0 1 1 0 64 32 32 0 1 1 0-64z"/></svg>`,
-    },
-    {
-      title: "快速搜索",
-      features: [
-        "轻松查找和管理您保存的所有内容",
-       
-      ],
-      icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" stroke-width="1.5" fill="currentColor" class="w-6 h-6"><path d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zm306.7 69.1L162.4 380.6c-19.4 7.5-38.5-11.6-31-31l55.5-144.3c3.3-8.5 9.9-15.1 18.4-18.4l144.3-55.5c19.4-7.5 38.5 11.6 31 31L325.1 306.7c-3.2 8.5-9.9 15.1-18.4 18.4zM288 256a32 32 0 1 0 -64 0 32 32 0 1 0 64 0z"/></svg>`,
-    },
-    {
-      title: "源链接保存",
-      features: [
-        "自动记录内容的来源网页，方便回溯",
-      
-      ],
-      icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" stroke-width="1.5" fill="currentColor" class="w-6 h-6"><path d="M544 248v3.3l69.7-69.7c21.9-21.9 21.9-57.3 0-79.2L535.6 24.4c-21.9-21.9-57.3-21.9-79.2 0L416.3 64.5c-2.7-.3-5.5-.5-8.3-.5H296c-37.1 0-67.6 28-71.6 64H224V248c0 22.1 17.9 40 40 40s40-17.9 40-40V176c0 0 0-.1 0-.1V160l16 0 136 0c0 0 0 0 .1 0H464c44.2 0 80 35.8 80 80v8zM336 192v56c0 39.8-32.2 72-72 72s-72-32.2-72-72V129.4c-35.9 6.2-65.8 32.3-76 68.2L99.5 255.2 26.3 328.4c-21.9 21.9-21.9 57.3 0 79.2l78.1 78.1c21.9 21.9 57.3 21.9 79.2 0l37.7-37.7c.9 0 1.8 .1 2.7 .1H384c26.5 0 48-21.5 48-48c0-5.6-1-11-2.7-16H432c26.5 0 48-21.5 48-48c0-12.8-5-24.4-13.2-33c25.7-5 45.1-27.6 45.2-54.8v-.4c-.1-30.8-25.1-55.8-56-55.8c0 0 0 0 0 0l-120 0z"/></svg>`,
-    },
-   
-   
-  ],
+  features: {
+    title: 'なぜClipTrackなのか',
+    items: [
+      {
+        subtitle: "スマートクリップ",
+        content: [
+          "コピーしたテキスト、リンク、画像を自動保存",
+        ],
+        icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" stroke-width="1.5" fill="currentColor" class="w-6 h-6"><path d="M256 0c17.7 0 32 14.3 32 32V42.4c93.7 13.9 167.7 88 181.6 181.6H480c17.7 0 32 14.3 32 32s-14.3 32-32 32H469.6c-13.9 93.7-88 167.7-181.6 181.6V480c0 17.7-14.3 32-32 32s-32-14.3-32-32V469.6C130.3 455.7 56.3 381.7 42.4 288H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H42.4C56.3 130.3 130.3 56.3 224 42.4V32c0-17.7 14.3-32 32-32zM107.4 288c12.5 58.3 58.4 104.1 116.6 116.6V384c0-17.7 14.3-32 32-32s32 14.3 32 32v20.6c58.3-12.5 104.1-58.4 116.6-116.6H384c-17.7 0-32-14.3-32-32s14.3-32 32-32h20.6C392.1 165.7 346.3 119.9 288 107.4V128c0 17.7-14.3 32-32 32s-32-14.3-32-32V107.4C165.7 119.9 119.9 165.7 107.4 224H128c17.7 0 32 14.3 32 32s-14.3 32-32 32H107.4zM256 224a32 32 0 1 1 0 64 32 32 0 1 1 0-64z"/></svg>`,
+      },
+      {
+        subtitle: "迅速な検索",
+        content: [
+          "保存したすべてのコンテンツを簡単に検索および管理",
+        ],
+        icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" stroke-width="1.5" fill="currentColor" class="w-6 h-6"><path d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zm306.7 69.1L162.4 380.6c-19.4 7.5-38.5-11.6-31-31l55.5-144.3c3.3-8.5 9.9-15.1 18.4-18.4l144.3-55.5c19.4-7.5 38.5 11.6 31 31L325.1 306.7c-3.2 8.5-9.9 15.1-18.4 18.4zM288 256a32 32 0 1 0 -64 0 32 32 0 1 0 64 0z"/></svg>`,
+      },
+      {
+        subtitle: "ソースリンクの保存",
+        content: [
+          "コンテンツのソースWebページを自動記録し、簡単に遡ることができます",
+        ],
+        icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" stroke-width="1.5" fill="currentColor" class="w-6 h-6"><path d="M544 248v3.3l69.7-69.7c21.9-21.9 21.9-57.3 0-79.2L535.6 24.4c-21.9-21.9-57.3-21.9-79.2 0L416.3 64.5c-2.7-.3-5.5-.5-8.3-.5H296c-37.1 0-67.6 28-71.6 64H224V248c0 22.1 17.9 40 40 40s40-17.9 40-40V176c0 0 0-.1 0-.1V160l16 0 136 0c0 0 0 0 .1 0H464c44.2 0 80 35.8 80 80v8zM336 192v56c0 39.8-32.2 72-72 72s-72-32.2-72-72V129.4c-35.9 6.2-65.8 32.3-76 68.2L99.5 255.2 26.3 328.4c-21.9 21.9-21.9 57.3 0 79.2l78.1 78.1c21.9 21.9 57.3 21.9 79.2 0l37.7-37.7c.9 0 1.8 .1 2.7 .1H384c26.5 0 48-21.5 48-48c0-5.6-1-11-2.7-16H432c26.5 0 48-21.5 48-48c0-12.8-5-24.4-13.2-33c25.7-5 45.1-27.6 45.2-54.8v-.4c-.1-30.8-25.1-55.8-56-55.8c0 0 0 0 0 0l-120 0z"/></svg>`,
+      },
+    ],
+  },
 
   solutions: [
     {
-      title: "Floating Window & Sidebar",
+      title: "フローティングウィンドウとサイドバー",
       painPoint:
-        "The floating window mode allows for easy adjustment of position, offering flexibility and convenience.",
+        "フローティングウィンドウモードでは、位置を簡単に調整でき、柔軟性と利便性を提供します。",
       agitatepainPoint:
-        "The sidebar mode does not obstruct the main content, providing intuitive operation.",
+        "サイドバーモードはメインコンテンツを妨げず、直感的な操作を提供します。",
       solution:
-        "Choose your preferred method.",
+        "お好みの方法を選択してください。",
       img: visibilityDilemma,
     },
     {
-      title: "Easy to Operate",
+      title: "使いやすい",
       painPoint:
-        "Intuitive Display, Convenient Operation.",
+        "直感的な表示と操作性。",
       agitatepainPoint:
-        "Help you quickly search, operate, and manage clipboard content.",
+        "クリップボードコンテンツを迅速に検索、操作、管理するのに役立ちます。",
       solution:
-        "Choose your preferred method.",
+        "お好みの方法を選択してください。",
       img: engagementGap,
     },
     {
-      title: "Seamless and Efficient Recording",
+      title: "スムーズな記録",
       painPoint:
-        "No additional actions required, seamless recording ensures a smooth experience for you.",
+        "追加の操作なしで、シームレスな記録を提供し、スムーズな体験を提供します。",
       agitatepainPoint:
-        "Original web links are preserved, allowing you to quickly locate the source and enhance productivity.",
+        "元のWebリンクを保持し、ソースを迅速に見つけて生産性を向上させます。",
       solution:
-        "Accurate timestamps are included for easy tracking and management.",
+        "正確なタイムスタンプを含め、追跡および管理を容易にします。",
       img: resultsInHibernation,
     },
   ],
-  faqs: [
-    {
-      question: "ClipTrack是什么？",
-      answer:
-        "ClipTrack 是一款智能剪贴板管理工具，旨在帮助用户提升生产力并组织数字生活。它允许用户轻松搜索、整理和管理剪贴板内容，支持浮动窗口和侧边栏模式，提供无缝记录功能，并保留原始网页链接和时间戳。",
-    },
-    {
-      question: "ClipTrack支持哪些浏览器？",
-      answer:
-        "ClipTrack支持所有主流浏览器，包括但不限于Chrome、Firefox、Safari、Edge等。我们致力于为用户提供跨平台、无缝的剪贴板管理体验。",
-    },
-    {
-      question: "我的剪贴内容安全吗？",
-      answer:
-        "ClipTrack非常重视您的隐私和数据安全。我们采用端到端加密技术，确保您的剪贴内容在传输和存储过程中得到严格保护。同时，我们严格遵守相关法律法规，确保您的数据安全。",
-    },
-    {
-      question: "如何使用 ClipTrack 的浮动窗口模式？",
-      answer:
-        "浮动窗口模式允许用户将剪贴板管理器固定在屏幕的任意位置，方便随时访问。只需在设置中启用浮动窗口模式，即可调整窗口位置和大小，享受灵活的操作体验。",
-    },
-   
-    {
-      question: "ClipTrack 是否支持多设备同步？",
-      answer:
-        "目前 ClipTrack 不支持多设备同步功能，但我们正在开发此功能，预计将在未来的版本中推出。",
-    },
-   
-  ],
+  
+  faqs: {
+    title: 'よくある質問',
+    questions: [
+      {
+        question: "ClipTrackとは何ですか？",
+        answer:
+          "ClipTrackは、ユーザーの生産性を向上させ、デジタルライフを整理するためのスマートクリップボード管理ツールです。ユーザーはクリップボードコンテンツを簡単に検索、整理、管理でき、フローティングウィンドウとサイドバーモードをサポートし、シームレスな記録機能を提供し、元のWebページリンクとタイムスタンプを保持します。",
+      },
+      {
+        question: "ClipTrackはどのブラウザをサポートしていますか？",
+        answer:
+          "ClipTrackはChromeとEdgeブラウザをサポートしており、今後さらに多くのブラウザをサポートする予定です。ユーザーにクロスプラットフォームでシームレスなクリップボード管理体験を提供することに努めています。",
+      },
+      {
+        question: "クリップボードコンテンツは安全ですか？",
+        answer:
+          "ClipTrackはあなたのプライバシーとデータセキュリティを非常に重視しています。すべてのデータはローカルブラウザに保存され、ClipTrackプラグインを削除するかブラウザデータを手動でクリアすると、すべてのデータが削除されます。また、関連する法律法規を厳守し、あなたのデータセキュリティを確保します。",
+      },
+      {
+        question: "ClipTrackはどのようなコピータイプをサポートしていますか？",
+        answer:
+          "ClipTrackは現在、テキストとWebページのコピー記録をサポートしています。ユーザーの多様なニーズに応えるため、今後サポートするタイプを拡張していく予定です。",
+      },
+      {
+        question: "ClipTrackはマルチデバイス同期をサポートしていますか？",
+        answer:
+          "現在、ClipTrackはマルチデバイス同期機能をサポートしていませんが、この機能の開発を進めており、今後のバージョンでリリースする予定です。",
+      },
+    ],
+  },
+
   footerSupport: [
-   { itemText: "Privacy", itemLink: "/privacy" },
-    { itemText: "Terms", itemLink: "/terms" },
-    { itemText: "Contact", itemLink: "#" },
+    { itemText: "プライバシーポリシー", itemLink: "/ja/privacy" },
+    { itemText: "利用規約", itemLink: "/ja/terms" },
+ 
+  
   ],
   footerProduct: [
-    { itemText: "Home", itemLink: "#" },
-    { itemText: "Features", itemLink: "#Features" },
-    { itemText: "How It Works", itemLink: "#" },
-    { itemText: "FAQs", itemLink: "#" },
-
+    { itemText: "ホーム", itemLink: "#" },
+    { itemText: "機能", itemLink: "#features" },
+    { itemText: "よくある質問", itemLink: "#faq" },
   ],
   footerLove: [
-    { itemText: "联系我们", itemLink: "#" },
+    { itemText: "お問い合わせ", itemLink: "#" },
   ],
+
+  privacyPolicy: {
+    title: "プライバシーポリシー",
+    lastUpdated: "最終更新日",
+    introduction: {
+      title: "1. はじめに",
+      content: "ClipTrackクリップボード管理アシスタントプラグインをご利用いただきありがとうございます！私たちはあなたのプライバシーを非常に重視し、あなたの個人情報を保護することに努めています。このプライバシーポリシーは、私たちがあなたの情報をどのように収集、使用、保護するかを説明します。",
+    },
+    informationWeCollect: {
+      title: "2. 収集する情報",
+      content: "ClipTrackプラグインは、効率的なクリップボード管理機能を提供するためのブラウザ拡張機能です。私たちは、この機能を提供するために必要な最小限の情報のみを収集します。すべてのデータはあなたのローカルブラウザに保存され、サーバーにアップロードされることはありません。具体的には以下を収集します：",
+      items: [
+        {
+          title: "クリップボードコンテンツ",
+          description: "クリップボード管理機能を提供するために、あなたがクリップボードにコピーしたコンテンツにアクセスし、保存する必要があります。これらのコンテンツはあなたのローカルブラウザにのみ保存され、私たちのサーバーにアップロードされることはありません。",
+        },
+        {
+          title: "使用データ",
+          description: "製品やサービスを改善するために、匿名の使用データ（例：プラグインの使用頻度、機能の使用状況など）を収集する場合があります。このデータには個人を特定できる情報は含まれず、私たちのサーバーにアップロードされることはありません。",
+        },
+      ],
+    },
+    howWeUseYourInformation: {
+      title: "3. 情報の使用方法",
+      content: "私たちが収集する情報は、以下の目的で使用されます：",
+      items: [
+        {
+          title: "プラグイン機能の提供と改善",
+          description: "あなたのクリップボードコンテンツを使用して、プラグインのコア機能を提供し、匿名の使用データを使用して製品やサービスを改善します。",
+        },
+        {
+          title: "パーソナライズされた体験",
+          description: "あなたの使用データを使用して、よりパーソナライズされた体験を提供する場合があります。",
+        },
+      ],
+    },
+    howWeProtectYourInformation: {
+      title: "4. 情報の保護方法",
+      content: "私たちは、あなたの情報のセキュリティを保護するために以下の対策を講じています：",
+      items: [
+        {
+          title: "ローカルストレージ",
+          description: "あなたのクリップボードコンテンツと使用データは、あなたのローカルブラウザにのみ保存され、サーバーにアップロードされることはありません。",
+        },
+        {
+          title: "データ暗号化",
+          description: "私たちは、データの送信と保存中にあなたの情報を保護するために暗号化技術を使用します。",
+        },
+        {
+          title: "アクセス制御",
+          description: "私たちは、あなたの情報へのアクセスを制限し、情報を処理する必要がある人員のみがアクセスできるようにします。",
+        },
+      ],
+    },
+    yourRights: {
+      title: "5. あなたの権利",
+      content: "私たちが収集するあなたの情報に対して、アクセス、訂正、削除の権利を持っています。以下の方法で権利を行使できます：",
+      items: [
+        {
+          title: "アクセスと訂正",
+          description: "あなたはいつでも、あなたのローカルブラウザに保存されたクリップボードコンテンツにアクセスし、訂正することができます。",
+        },
+        {
+          title: "削除",
+          description: "あなたはいつでも、あなたのローカルブラウザに保存されたクリップボードコンテンツを削除し、プラグインのキャッシュデータをクリアすることができます。プラグインをアンインストールするかブラウザデータをクリアすると、すべての関連情報が自動的に削除されます。",
+        },
+      ],
+    },
+    policyChanges: {
+      title: "6. プライバシーポリシーの変更",
+      content: "私たちは、このプライバシーポリシーを随時更新する場合があります。プライバシーポリシーに重大な変更を加える場合、プラグイン内に通知を表示したり、メールでお知らせするなど、適切な方法でお知らせします。",
+    },
+    contactUs: {
+      title: "7. お問い合わせ",
+      content: "このプライバシーポリシーに関するご質問がある場合は、以下の方法でお問い合わせください：",
+      email: "1943875844@qq.com",
+    },
+  },
+
+  termsOfService: {
+    title: "利用規約",
+    lastUpdated: "最終更新日",
+    introduction: {
+      title: "1. 規約の承諾",
+      content: "ClipTrackクリップボード管理アシスタントプラグインを使用することにより、あなたはこの利用規約に同意したものとみなされます。この利用規約に同意しない場合は、プラグインを使用しないでください。",
+    },
+    license: {
+      title: "2. 使用許諾",
+      content: "私たちは、あなたに限定的、非独占的、譲渡不可のライセンスを付与し、あなたの個人用デバイスにClipTrackプラグインをインストールし、個人使用のみを目的として使用することを許可します。",
+    },
+    userResponsibilities: {
+      title: "3. ユーザーの責任",
+      content: "あなたは以下のことに同意します：",
+      items: [
+        "ClipTrackプラグインを合法的な目的でのみ使用すること。",
+        "ClipTrackプラグインを使用して他人の知的財産権やその他の権利を侵害しないこと。",
+        "ClipTrackプラグインの正常な動作を妨害または破壊しないこと。",
+      ],
+    },
+    disclaimer: {
+      title: "4. 免責事項",
+      content: "ClipTrackプラグインは「現状のまま」提供され、商品性、特定目的への適合性、非侵害性に関する明示または黙示の保証を含め、いかなる保証も行いません。",
+    },
+    limitationOfLiability: {
+      title: "5. 責任の制限",
+      content: "いかなる場合においても、私たちはあなたまたは第三者がClipTrackプラグインの使用または使用不能により被った直接、間接、付随、特別、または派生的な損害に対して責任を負いません。",
+    },
+    changesToTerms: {
+      title: "6. 利用規約の変更",
+      content: "私たちは、この利用規約を随時更新する場合があります。利用規約に重大な変更を加える場合、プラグイン内に通知を表示したり、メールでお知らせするなど、適切な方法でお知らせします。",
+    },
+    governingLaw: {
+      title: "7. 準拠法",
+      content: "この利用規約は、中華人民共和国の法律に準拠します。",
+    },
+    disputeResolution: {
+      title: "8. 紛争解決",
+      content: "この利用規約に起因するまたは関連するいかなる紛争も、友好的な協議により解決するものとします。協議が成立しない場合、双方は紛争を中国国際経済貿易仲裁委員会に付託することに同意します。",
+    },
+    contactUs: {
+      title: "9. お問い合わせ",
+      content: "この利用規約に関するご質問がある場合は、以下の方法でお問い合わせください：",
+      email: "1943875844@qq.com",
+    },
+  },
 } as const;

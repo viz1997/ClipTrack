@@ -3,7 +3,7 @@ import { ui, defaultLang, type Lang } from './ui';
 // 从 URL 中提取语言
 export function getLangFromUrl(url: URL): Lang {
   const [, lang] = url.pathname.split('/');
-  if (lang in ui) return lang as Lang;
+  if (lang && lang.toLowerCase() in ui) return lang.toLowerCase() as Lang;
   return defaultLang;
 }
 

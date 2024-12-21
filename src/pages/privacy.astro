@@ -2,74 +2,69 @@
 import Container from "../components/shared/Container.astro";
 import Layout from "../layouts/Layout.astro";
 
-const lastUpdated = new Date().toLocaleDateString('zh-CN', {
-  year: 'numeric',
-  month: 'long',
-  day: 'numeric'
-});
+const lastUpdated = "2024.12.21"
 ---
 
 <Layout title="Privacy Policy">
   <Container>
     <div class="py-20">
       <div class="max-w-4xl mx-auto">
-        <h1 class="text-4xl font-bold mb-4 text-gray-900 dark:text-white">隐私说明</h1>
-        <p class="text-gray-600 dark:text-gray-400 mb-8">最后更新日期：{lastUpdated}</p>
+        <h1 class="text-4xl font-bold mb-4 text-gray-900 dark:text-white">Privacy Policy</h1>
+        <p class="text-gray-600 dark:text-gray-400 mb-8">Last Updated: {lastUpdated}</p>
         
         <div class="space-y-8 text-gray-700 dark:text-gray-300">
           <section>
-            <h2 class="text-2xl font-semibold mb-4 text-gray-800 dark:text-gray-100">1. 引言</h2>
-            <p class="mb-4">欢迎使用 ClipTrack 剪贴板管理助手插件！我们非常重视您的隐私，并致力于保护您的个人信息。本隐私说明解释了我们如何收集、使用和保护您的信息。</p>
+            <h2 class="text-2xl font-semibold mb-4 text-gray-800 dark:text-gray-100">1. Introduction</h2>
+            <p class="mb-4">Welcome to ClipTrack, the clipboard management assistant plugin! We highly value your privacy and are committed to protecting your personal information. This Privacy Policy explains how we collect, use, and protect your information.</p>
           </section>
 
           <section>
-            <h2 class="text-2xl font-semibold mb-4 text-gray-800 dark:text-gray-100">2. 我们收集的信息</h2>
-            <p class="mb-4">ClipTrack 插件是一款浏览器扩展，旨在提供高效的剪贴板管理功能。我们仅收集实现该功能所需的最低限度的信息，所有数据都存储在您的本地浏览器中，不会上传到任何服务器。具体包括：</p>
+            <h2 class="text-2xl font-semibold mb-4 text-gray-800 dark:text-gray-100">2. Information We Collect</h2>
+            <p class="mb-4">ClipTrack is a browser extension designed to provide efficient clipboard management. We only collect the minimum amount of information necessary to provide this functionality. All data is stored locally in your browser and is not uploaded to any server. Specifically, we collect:</p>
             <ul class="list-disc pl-6 space-y-2">
-              <li><strong class="text-gray-900 dark:text-gray-100">剪贴板内容：</strong> 为了提供剪贴板管理功能，我们需要访问和存储您复制到剪贴板的内容。这些内容仅存储在您的本地浏览器中，不会上传到我们的服务器。</li>
-              <li><strong class="text-gray-900 dark:text-gray-100">使用数据：</strong> 为了改进产品和服务，我们可能会收集匿名的使用数据，例如您使用插件的频率、功能使用情况等。这些数据不会包含任何个人身份信息，也不会上传到我们的服务器。</li>
+              <li><strong class="text-gray-900 dark:text-gray-100">Clipboard Content:</strong> To provide clipboard management functionality, we need to access and store the content you copy to the clipboard. This content is stored locally in your browser and is not uploaded to our servers.</li>
+              <li><strong class="text-gray-900 dark:text-gray-100">Usage Data:</strong> To improve our products and services, we may collect anonymous usage data, such as the frequency of your use of the plugin and the features you use. This data does not contain any personally identifiable information and is not uploaded to our servers.</li>
             </ul>
           </section>
 
           <section>
-            <h2 class="text-2xl font-semibold mb-4 text-gray-800 dark:text-gray-100">3. 我们如何使用您的信息</h2>
-            <p class="mb-4">我们收集的信息将用于以下目的：</p>
+            <h2 class="text-2xl font-semibold mb-4 text-gray-800 dark:text-gray-100">3. How We Use Your Information</h2>
+            <p class="mb-4">The information we collect is used for the following purposes:</p>
             <ul class="list-disc pl-6 space-y-2">
-              <li><strong class="text-gray-900 dark:text-gray-100">提供和改进插件功能：</strong> 我们使用您的剪贴板内容来实现插件的核心功能，并使用匿名使用数据来改进产品和服务。</li>
-              <li><strong class="text-gray-900 dark:text-gray-100">个性化体验：</strong> 我们可能会使用您的使用数据来为您提供更加个性化的体验。</li>
+              <li><strong class="text-gray-900 dark:text-gray-100">Providing and Improving Plugin Functionality:</strong> We use your clipboard content to provide the core functionality of the plugin and use anonymous usage data to improve our products and services.</li>
+              <li><strong class="text-gray-900 dark:text-gray-100">Personalizing Your Experience:</strong> We may use your usage data to provide a more personalized experience.</li>
             </ul>
           </section>
 
           <section>
-            <h2 class="text-2xl font-semibold mb-4 text-gray-800 dark:text-gray-100">4. 我们如何保护您的信息</h2>
-            <p class="mb-4">我们采取以下措施来保护您的信息安全：</p>
+            <h2 class="text-2xl font-semibold mb-4 text-gray-800 dark:text-gray-100">4. How We Protect Your Information</h2>
+            <p class="mb-4">We take the following measures to protect your information security:</p>
             <ul class="list-disc pl-6 space-y-2">
-              <li><strong class="text-gray-900 dark:text-gray-100">本地存储：</strong> 您的剪贴板内容和使用数据仅存储在您的本地浏览器中，不会上传到任何服务器。</li>
-              <li><strong class="text-gray-900 dark:text-gray-100">数据加密：</strong> 我们使用加密技术来保护您的信息在传输和存储过程中的安全。</li>
-              <li><strong class="text-gray-900 dark:text-gray-100">访问控制：</strong> 我们限制对您的信息的访问权限，只有需要处理这些信息的人员才能访问。</li>
+              <li><strong class="text-gray-900 dark:text-gray-100">Local Storage:</strong> Your clipboard content and usage data are stored locally in your browser and are not uploaded to any server.</li>
+              <li><strong class="text-gray-900 dark:text-gray-100">Data Encryption:</strong> We use encryption technologies to protect your information during transmission and storage.</li>
+              <li><strong class="text-gray-900 dark:text-gray-100">Access Control:</strong> We restrict access to your information to only those who need to process it.</li>
             </ul>
           </section>
 
           <section>
-            <h2 class="text-2xl font-semibold mb-4 text-gray-800 dark:text-gray-100">5. 您的权利</h2>
-            <p class="mb-4">您有权访问、更正和删除我们收集的您的信息。您可以通过以下方式行使您的权利：</p>
+            <h2 class="text-2xl font-semibold mb-4 text-gray-800 dark:text-gray-100">5. Your Rights</h2>
+            <p class="mb-4">You have the right to access, correct, and delete the information we collect. You can exercise your rights as follows:</p>
             <ul class="list-disc pl-6 space-y-2">
-              <li><strong class="text-gray-900 dark:text-gray-100">访问和更正：</strong> 您可以随时访问和更正存储在您本地浏览器中的剪贴板内容。</li>
-              <li><strong class="text-gray-900 dark:text-gray-100">删除：</strong> 您可以随时删除存储在您本地浏览器中的剪贴板内容，以及清除插件的缓存数据。卸载插件或清除浏览器数据也会自动删除所有相关信息。</li>
+              <li><strong class="text-gray-900 dark:text-gray-100">Access and Correction:</strong> You can access and correct the clipboard content stored in your local browser at any time.</li>
+              <li><strong class="text-gray-900 dark:text-gray-100">Deletion:</strong> You can delete the clipboard content stored in your local browser at any time, as well as clear the plugin's cache data. Uninstalling the plugin or clearing browser data will also automatically delete all related information.</li>
             </ul>
           </section>
 
           <section>
-            <h2 class="text-2xl font-semibold mb-4 text-gray-800 dark:text-gray-100">6. 隐私政策的变更</h2>
-            <p class="mb-4">我们可能会不时更新本隐私说明。如果我们对隐私政策做出重大变更，我们将通过适当的方式通知您，例如在插件中显示通知或发送电子邮件。</p>
+            <h2 class="text-2xl font-semibold mb-4 text-gray-800 dark:text-gray-100">6. Changes to the Privacy Policy</h2>
+            <p class="mb-4">We may update this Privacy Policy from time to time. If we make significant changes, we will notify you through appropriate means, such as displaying a notice in the plugin or sending an email.</p>
           </section>
 
           <section>
-            <h2 class="text-2xl font-semibold mb-4 text-gray-800 dark:text-gray-100">7. 联系我们</h2>
-            <p>如果您对本隐私说明有任何疑问，请通过以下方式与我们联系：</p>
+            <h2 class="text-2xl font-semibold mb-4 text-gray-800 dark:text-gray-100">7. Contact Us</h2>
+            <p>If you have any questions about this Privacy Policy, please contact us through the following methods:</p>
             <div class="mt-4 p-4 bg-gray-100 dark:bg-gray-800 rounded-lg">
-              <p class="mb-2"><strong class="text-gray-900 dark:text-gray-100">邮箱：</strong> <a href="1943875844@qq.com" class="text-primary hover:underline">1943875844@qq.com</a></p>
-            
+              <p class="mb-2"><strong class="text-gray-900 dark:text-gray-100">Email:</strong> <a href="mailto:1943875844@qq.com" class="text-primary hover:underline">1943875844@qq.com</a></p>
             </div>
           </section>
         </div>

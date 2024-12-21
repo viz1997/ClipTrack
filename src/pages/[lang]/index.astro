@@ -2,7 +2,7 @@
 import Layout from "../../layouts/Layout.astro";
 import Hero from "../../components/sections/Hero.astro";
 
-import Services from "../../components/sections/Services.astro";
+import Testimonials from "../../components/sections/Testimonials.astro";
 import FAQ from "../../components/sections/FAQ.astro";
 import Features from "../../components/sections/Features.astro";
 import CTA from "../../components/sections/CTA.astro";
@@ -10,9 +10,14 @@ import Solutions from "../../components/sections/Solutions.astro";
 import { getLangFromUrl, useTranslations } from '../../i18n/utils';
 import { languages } from '../../i18n/config';
 
-export function getStaticPaths() {
-  return Object.keys(languages).map((lang) => ({ params: { lang } }));
+// Define the dynamic language parameter
+export async function getStaticPaths() {
+  return Object.keys(languages).map((lang) => ({
+    params: { lang }, // The dynamic parameter (e.g., "en", "zh")
+    props: { lang }, // Pass the language as a prop
+  }));
 }
+
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -23,15 +28,16 @@ const t = useTranslations(lang);
   <main class="flex flex-col overflow-hidden">
     <Hero className="py-10 md:py-16" />
     <Solutions className="pt-10 md:pt-16" />
-    <Services className="py-10 md:py-16" />
+   
     <Features className="py-10 md:py-16" />
+     <Testimonials className="py-10 md:py-16" />
     <FAQ className="py-10 md:py-16" />
     <CTA className="py-10 md:py-16" />
     <!-- Hero -->
     <!-- headline, subheading, image, cta button, results -->
     <!-- Problems/Solutions -->
     <!-- title, painpoint, aggitate pain, introduce solution, video  -->
-    <!-- Benefits/Services -->
+    <!-- Benefits/Testimonials -->
     <!-- benefit title, thanks to features, visual -->
     <!-- Testimonials/Brands -->
     <!-- reviews, partners -->
