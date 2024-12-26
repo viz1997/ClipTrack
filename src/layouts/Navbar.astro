@@ -1,12 +1,11 @@
 ---
+// File: src/components/Header.astro
 import { Image } from "astro:assets";
 import Container from "../components/shared/Container.astro";
 import Navitem from "../components/shared/Navitem.astro";
-import BtnLink from "../components/shared/BtnLink.astro";
-import logo from "../assets/logos/cliptrack.png";
 import LanguageSwitcher from "./LanguageSwitcher.astro";
-
-
+import GetStartedModal from "../components/shared/GetStartedModal.astro";
+import logo from "../assets/logos/cliptrack.png";
 import { getLangFromUrl, useTranslations } from '../i18n/utils';
 import { languages } from '../i18n/config';
 
@@ -19,10 +18,9 @@ const t = useTranslations(lang);
 
 const navItems = [
   {
-    href: `/${lang}/`, // 动态生成链接
+    href: `/${lang}/`,
     text: t("nav.home"),
   },
-
   {
     href: `/${lang}#features`,
     text: t("nav.features"),
@@ -31,14 +29,11 @@ const navItems = [
     href: `/${lang}#faq`,
     text: t("nav.faq"),
   },
- {
+  {
     href: `/${lang}#about`,
     text: t("nav.about"),
   },
 ];
-
-
-
 ---
 
 <header class="absolute inset-x-0 top-0 z-50 py-6">
@@ -87,13 +82,12 @@ const navItems = [
         <div
           class="lg:min-w-max flex items-center sm:w-max w-full pb-6 lg:pb-0 border-b border-box-bg lg:border-0 px-6 lg:px-0"
         >
-          <BtnLink
-            text={t("nav.getStarted")}
-            href="https://microsoftedge.microsoft.com/addons/detail/caafacpmhlfagbkmnmeelkpiggeackhl"
-            target="_blank"
-            className="flex justify-center w-full sm:w-max"
-            variant="primary"
-          />
+          <button
+            id="getStartedBtn"
+            class="flex justify-center w-full sm:w-max bg-primary text-white px-6 py-3 rounded-full hover:bg-primary-hover transition-colors duration-300"
+          >
+            {t("nav.getStarted")}
+          </button>
         </div>
       </div>
 
@@ -134,7 +128,7 @@ const navItems = [
 
           <span class="sr-only">switch theme</span>
         </button>
-     <LanguageSwitcher />
+        <LanguageSwitcher />
         <button
           data-toggle-nav
           data-open-nav="false"
@@ -158,3 +152,11 @@ const navItems = [
     </nav>
   </Container>
 </header>
+
+<GetStartedModal t={t} />
+
+<script>
+  document.getElementById('getStartedBtn').addEventListener('click', () => {
+    window.openGetStartedModal();
+  });
+</script>

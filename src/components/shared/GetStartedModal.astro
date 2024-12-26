@@ -1,0 +1,51 @@
+---
+// File: src/components/GetStartedModal.astro
+const { t } = Astro.props;
+---
+
+<div id="getStartedModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden z-50">
+  <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-xl max-w-md w-full relative">
+    <!-- 右上角关闭按钮 -->
+    <button id="closeModalButton" class="absolute top-2 right-2 text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300 transition duration-300">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+      </svg>
+    </button>
+
+    <div class="flex justify-around">
+      <a href="https://microsoftedge.microsoft.com/addons/detail/caafacpmhlfagbkmnmeelkpiggeackhl" target="_blank" class="flex flex-col items-center p-4 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg transition duration-300" onclick="closeModal()">
+        <img src="/edge.svg" alt="Microsoft Edge" class="w-16 h-16" />
+        <span class="mt-2 text-gray-800 dark:text-white">Microsoft Edge</span>
+      </a>
+      <a href="https://chrome.google.com/webstore/detail/your-extension-id" target="_blank" class="flex flex-col items-center p-4 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg transition duration-300" onclick="closeModal()">
+        <img src="/chrome.svg" alt="Google Chrome" class="w-16 h-16" />
+        <span class="mt-2 text-gray-800 dark:text-white">Google Chrome</span>
+      </a>
+    </div>
+  </div>
+</div>
+
+<script>
+  const modal = document.getElementById('getStartedModal');
+  const closeModalButton = document.getElementById('closeModalButton');
+
+  function openModal() {
+    modal.classList.remove('hidden');
+  }
+
+  function closeModal() {
+    modal.classList.add('hidden');
+  }
+
+  // Close modal when clicking outside
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) closeModal();
+  });
+
+  closeModalButton.addEventListener('click', closeModal);
+
+  // Expose openModal function globally
+  window.openGetStartedModal = openModal;
+  // Expose closeModal function globally
+  window.closeModal = closeModal;
+</script>
