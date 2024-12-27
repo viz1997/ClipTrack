@@ -156,8 +156,8 @@ export default {
   },
 
   footerSupport: [
-    { itemText: "隱私政策", itemLink: "/zh-TW/privacy" },
-    { itemText: "服務條款", itemLink: "/zh-TW/terms" },
+    { itemText: "隱私政策", itemLink: "/zh-tw/privacy" },
+    { itemText: "服務條款", itemLink: "/zh-tw/terms" },
   
   ],
   footerProduct: [

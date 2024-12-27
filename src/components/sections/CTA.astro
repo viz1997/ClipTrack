@@ -4,6 +4,7 @@ import BtnLink from "../shared/BtnLink.astro";
 import Container from "../shared/Container.astro";
 import GradiantText from "../shared/GradiantText.astro";
 import Paragraph from "../shared/Paragraph.astro";
+import GetStartedModal from "../shared/GetStartedModal.astro";
 import { getLangFromUrl, useTranslations } from '../../i18n/utils';
 import { languages } from '../../i18n/config';
 
@@ -36,19 +37,18 @@ const { className } = Astro.props;
         <Paragraph className="pt-10 font-semibold">
          { t("ready.description") }
         </Paragraph>
-        <div class="mx-auto max-w-md sm:max-w-xl pt-10">
-    
-
-             <BtnLink
-            text={t("nav.getStarted")}
-            href="https://microsoftedge.microsoft.com/addons/detail/caafacpmhlfagbkmnmeelkpiggeackhl"
-            target="_blank"
-      
-            className="min-w-max text-white justify-center w-full sm:w-max"
-            variant="primary"
-          />
-        </div>
+       <div class="mx-auto max-w-md sm:max-w-xl pt-10 flex justify-center">
+  <button
+    id="getStartedBtn"
+    onclick="openGetStartedModal()"
+    class="flex justify-center w-full sm:w-max bg-primary text-white px-6 py-3 rounded-full hover:bg-primary-hover transition-colors duration-300"
+  >
+    {t("nav.getStarted")}
+  </button>
+</div>
       </div>
     </div>
   </Container>
 </section>
+
+<GetStartedModal t={t} />

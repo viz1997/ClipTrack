@@ -7,6 +7,7 @@ import GradiantText from "../shared/GradiantText.astro";
 import myImage from "../../assets/images/dev-with-c-1.webp";
 import { ui, defaultLang, languages } from '../../i18n/ui';
 import { getLangFromUrl, useTranslations } from '../../i18n/utils';
+import GetStartedModal from "../shared/GetStartedModal.astro";
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
@@ -46,8 +47,8 @@ const { className } = Astro.props;
                   <GradiantText>
                {solution.title}
                     <a
-                      href="https://microsoftedge.microsoft.com/addons/detail/caafacpmhlfagbkmnmeelkpiggeackhl"
-                      target="_blank"
+                       href="javascript:void(0);"
+                      onclick="openGetStartedModal()"
                       class="ml-4 text-lg hover:underline"
                     >
                       <font _mstmutation="1" _msttexthash="13865969" _msthash="65">{t("nav.getStarted")}</font>
@@ -86,3 +87,5 @@ const { className } = Astro.props;
     })
   }
 </section>
+
+<GetStartedModal t={t} /> 

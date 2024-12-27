@@ -182,7 +182,7 @@ export default {
 
   footerSupport: [
    { itemText: "Privacy", itemLink: "/en/privacy" },
-    { itemText: "Terms", itemLink: "/en/terms" },
+    { itemText: "Terms of Use", itemLink: "/en/terms" },
  
   ],
   footerProduct: [
@@ -275,7 +275,7 @@ export default {
     },
   },
   termsOfService: {
-    title: "Terms of Service",
+    title: "Terms of Use",
     lastUpdated: "Last Updated",
     introduction: {
       title: "1. Acceptance of Terms",

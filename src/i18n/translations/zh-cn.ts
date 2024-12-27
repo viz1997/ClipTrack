@@ -168,8 +168,8 @@ export default {
     ],
   },
   footerSupport: [
-    { itemText: "隐私政策", itemLink: "/zh/privacy" },
-    { itemText: "服务条款", itemLink: "/zh/terms" },
+    { itemText: "隐私政策", itemLink: "/zh-cn/privacy" },
+    { itemText: "服务条款", itemLink: "/zh-cn/terms" },
   
   ],
   footerProduct: [
