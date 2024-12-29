@@ -181,7 +181,7 @@ export default {
   },
 
   footerSupport: [
-   { itemText: "Privacy", itemLink: "/en/privacy" },
+   { itemText: "Privacy Policy", itemLink: "/en/privacy" },
     { itemText: "Terms of Use", itemLink: "/en/terms" },
  
   ],

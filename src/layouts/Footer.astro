@@ -5,6 +5,7 @@ import FooterNav from "../components/shared/FooterNav.astro";
 import Paragraph from "../components/shared/Paragraph.astro";
 import FooterBackground from "../components/blocks/FooterBackground.astro";
 import SocialLinks from "../components/shared/SocialLinks.astro";
+import aifadian from "../assets/images/aifadian.png";
 
 import { ui, defaultLang } from '../i18n/ui';
 import { getLangFromUrl, useTranslations } from '../i18n/utils';
@@ -24,6 +25,7 @@ const love = t("footer.love");
 
 const footerLoveWithImages = [
   { itemText: "WeChat Pay", itemLink: "https://i.stardots.ink/wenze/WeChat Pay.jpg?width=500&rotate=0&blur=0&quality=100", target: "_blank"}, // 添加图片 URL
+   { itemText: "", itemLink: "https://i.stardots.ink/wenze/afdian-wenze.png?width=500&rotate=0&blur=0&quality=100", image: "https://i.stardots.ink/wenze/afdian.png?width=500&rotate=0&blur=0&quality=50", target: "_blank"}, // 添加图片 URL
   { itemText: "", itemLink: "https://buymeacoffee.com/wenze", image: "https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png", target: "_blank"}, // 添加图片 URL
   { itemText: "", itemLink: "https://ko-fi.com/wenze", image: "https://storage.ko-fi.com/cdn/kofi6.png", target: "_blank" }, // 添加图片 URL
 ];
