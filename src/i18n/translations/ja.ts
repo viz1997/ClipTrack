@@ -14,6 +14,7 @@ export default {
     features: '機能',
     faq: 'よくある質問',
     getStarted: '今すぐ使う',
+    changelog: '変更履歴',
   },
   
   hero: {
@@ -294,4 +295,35 @@ export default {
       email: "1943875844@qq.com",
     },
   },
+  changelog: {
+    title: "変更履歴",
+    description: "ClipTrack の最新の変更と改善をご確認ください。",
+    versions: [
+      {
+        version: "1.0.4",
+        date: "2024-12-29",
+        change: {
+          features: [
+            "新規ユーザー向けのインストールウェルカムページを追加。",
+            "オンボーディングチュートリアルを導入し、ユーザーがすぐに使い始められるようサポート。",
+            "自動コピー切り替え機能を追加し、ユーザーが自動記録を無効にできるようにしました。"
+          ],
+          bugFixes: [
+            "サイドバーウィンドウがスクロールできない問題を修正しました。"
+          ]
+        }
+      },
+      {
+        version: "1.0.3",
+        date: "2024-12-26",
+        change: {
+          features: [
+            "ClipTrack の初期バージョンをリリース。",
+            "テキストやリンクのコピーを含む基本的なクリップボード管理機能をサポート。"
+          ],
+          bugFixes: []
+        }
+      }
+    ]
+  }
 } as const;

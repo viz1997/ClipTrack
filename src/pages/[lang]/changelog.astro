@@ -1,0 +1,68 @@
+---
+// File: src/pages/[lang]/changelog.astro
+import { Image } from "astro:assets";
+import Layout from "../../layouts/Layout.astro";
+import Container from "../../components/shared/Container.astro";
+import { getLangFromUrl, useTranslations } from '../../i18n/utils';
+import { languages } from '../../i18n/config';
+
+export function getStaticPaths() {
+  return Object.keys(languages).map((lang) => ({ params: { lang } }));
+}
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const changelogEntries = t("changelog.versions");
+---
+
+<Layout title={t("changelog.title")}>
+  <Container>
+    <section class="py-16 lg:py-20">
+      <div class="max-w-3xl mx-auto">
+        <h1 class="text-4xl font-bold text-heading-1 mb-8">{t("changelog.title")}</h1>
+        <p class="text-gray-600 mb-8">{t("changelog.description")}</p>
+        
+        {changelogEntries.map((entry) => (
+          <div class="mb-12">
+            <h2 class="text-2xl font-semibold text-heading-2 mb-2">
+              V{entry.version} - <span class="text-gray-600">{entry.date}</span>
+            </h2>
+            <ul class="space-y-2">
+              {entry.change.features && entry.change.features.length > 0 && (
+                <li class="text-gray-700">
+                  <span class="inline-flex items-center gap-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 text-green-500">
+                      <path d="M11.645 20.91l-.007-.003-.022-.012a15.247 15.247 0 01-.383-.218 25.18 25.18 0 01-4.244-3.17C4.688 15.36 2.25 12.174 2.25 8.25 2.25 5.322 4.714 3 7.688 3A5.5 5.5 0 0112 5.052 5.5 5.5 0 0116.313 3c2.973 0 5.437 2.322 5.437 5.25 0 3.925-2.438 7.111-4.739 9.256a25.175 25.175 0 01-4.244 3.17 15.247 15.247 0 01-.383.219l-.022.012-.007.004-.003.001a.752.752 0 01-.704 0l-.003-.001z" />
+                    </svg>
+                    <span class="font-medium">Features:</span>
+                  </span>
+                  <ul class="pl-6 mt-1">
+                    {entry.change.features.map((feature) => (
+                      <li class="text-gray-700">{feature}</li>
+                    ))}
+                  </ul>
+                </li>
+              )}
+              {entry.change.bugFixes && entry.change.bugFixes.length > 0 && (
+                <li class="text-gray-700">
+                  <span class="inline-flex items-center gap-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 text-red-500">
+                      <path fill-rule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zm-1.72 6.97a.75.75 0 10-1.06 1.06L10.94 12l-1.72 1.72a.75.75 0 101.06 1.06L12 13.06l1.72 1.72a.75.75 0 101.06-1.06L13.06 12l1.72-1.72a.75.75 0 10-1.06-1.06L12 10.94l-1.72-1.72z" clip-rule="evenodd" />
+                    </svg>
+                    <span class="font-medium">Bug Fixes:</span>
+                  </span>
+                  <ul class="pl-6 mt-1">
+                    {entry.change.bugFixes.map((fix) => (
+                      <li class="text-gray-700">{fix}</li>
+                    ))}
+                  </ul>
+                </li>
+              )}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </section>
+  </Container>
+</Layout>

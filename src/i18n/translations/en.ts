@@ -20,6 +20,7 @@ export default {
     features: 'Features',
     faq: 'FAQ',
     getStarted: 'Get Started',
+    changelog: 'Changelog',
   
   },
   
@@ -320,5 +321,40 @@ export default {
       email: "1943875844@qq.com",
     },
   },
+
+  
+  changelog: {
+      title: "Changelog",
+      description: "Stay updated with the latest changes and improvements in ClipTrack.",
+      versions: [
+  
+        {
+          version: "1.0.4",
+          date: "2024-12-29",
+          change: {
+            features: [
+              "Added an installation welcome page to guide new users.",
+              "Introduced an onboarding tutorial to help users get started quickly.",
+              "Added an automatic copy toggle to allow users to disable automatic recording of copied content."
+            ],
+            "bugFixes": [
+              "Fixed an issue where the sidebar window could not scroll."
+            ]
+          }
+        },
+        {
+          version: "1.0.3",
+          date: "2024-12-26",
+         change: {
+          features: [
+            "Initial release of ClipTrack.",
+            "Basic clipboard management features including text and link copying."
+          ],
+          bugFixes: []
+        }
+        }
+      ]
+    }
+  
 
 } as const;

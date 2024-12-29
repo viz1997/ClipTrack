@@ -13,6 +13,7 @@ export default {
     features: 'Funktionen',
     faq: 'FAQ',
     getStarted: 'Jetzt starten',
+    changelog: 'Änderungsprotokoll',
   },
   hero: {
     title: 'Verwalten Sie Ihre Zwischenablage wie ein Profi',
@@ -281,4 +282,35 @@ export default {
       email: "1943875844@qq.com",
     },
   },
+  changelog: {
+    title: "Änderungsprotokoll",
+    description: "Bleiben Sie über die neuesten Änderungen und Verbesserungen in ClipTrack auf dem Laufenden.",
+    versions: [
+      {
+        version: "1.0.4",
+        date: "2024-12-29",
+        change: {
+          features: [
+            "Eine Installations-Willkommensseite wurde hinzugefügt, um neue Benutzer zu führen.",
+            "Ein Onboarding-Tutorial wurde eingeführt, um Benutzern den schnellen Einstieg zu erleichtern.",
+            "Ein automatischer Kopieren-Schalter wurde hinzugefügt, um Benutzern zu ermöglichen, die automatische Aufzeichnung von kopierten Inhalten zu deaktivieren."
+          ],
+          bugFixes: [
+            "Behob ein Problem, bei dem das Seitenleistenfenster nicht scrollen konnte."
+          ]
+        }
+      },
+      {
+        version: "1.0.3",
+        date: "2024-12-26",
+        change: {
+          features: [
+            "Erstveröffentlichung von ClipTrack.",
+            "Grundlegende Zwischenablage-Verwaltungsfunktionen, einschließlich Text- und Link-Kopieren, werden unterstützt."
+          ],
+          bugFixes: []
+        }
+      }
+    ]
+  }
 } as const;

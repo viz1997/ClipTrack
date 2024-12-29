@@ -15,6 +15,7 @@ export default {
     features: '功能',
     faq: '常见问题',
     getStarted: '立即使用',
+    changelog: '更新日志',
   },
   
   hero: {
@@ -306,6 +307,37 @@ export default {
       email: "1943875844@qq.com",
     },
   },
+  changelog: {
+    title: "更新日志",
+    description: "了解 ClipTrack 的最新变化和改进。",
+    versions: [
+      {
+        version: "1.0.4",
+        date: "2024-12-29",
+        change: {
+          features: [
+            "新增安装欢迎页面，引导新用户使用。",
+            "引入新手教程，帮助用户快速上手。",
+            "增加自动复制开关，允许用户禁用自动记录复制内容。"
+          ],
+          bugFixes: [
+            "修复了侧边栏窗口无法滚动的问题。"
+          ]
+        }
+      },
+      {
+        version: "1.0.3",
+        date: "2024-12-26",
+        change: {
+          features: [
+            "ClipTrack 初始版本发布。",
+            "支持基本的剪贴板管理功能，包括文本和链接复制。"
+          ],
+          bugFixes: []
+        }
+      }
+    ]
+  }
 
 
 

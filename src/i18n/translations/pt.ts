@@ -15,6 +15,7 @@ export default {
     features: 'Funcionalidades',
     faq: 'Perguntas frequentes',
     getStarted: 'Começar',
+    changelog: 'Registro de mudanças',
   },
   hero: {
     title: 'Gerencie sua área de transferência como um profissional',
@@ -283,4 +284,35 @@ export default {
       email: "1943875844@qq.com",
     },
   },
+  changelog: {
+    title: "Registro de Alterações",
+    description: "Mantenha-se atualizado com as últimas mudanças e melhorias no ClipTrack.",
+    versions: [
+      {
+        version: "1.0.4",
+        date: "2024-12-29",
+        change: {
+          features: [
+            "Adicionada uma página de boas-vindas para guiar novos usuários.",
+            "Introduzido um tutorial de integração para ajudar os usuários a começarem rapidamente.",
+            "Adicionado um interruptor de cópia automática para permitir que os usuários desativem a gravação automática de conteúdo copiado."
+          ],
+          bugFixes: [
+            "Corrigido um problema em que a janela da barra lateral não rolava."
+          ]
+        }
+      },
+      {
+        version: "1.0.3",
+        date: "2024-12-26",
+        change: {
+          features: [
+            "Lançamento inicial do ClipTrack.",
+            "Funcionalidades básicas de gerenciamento de área de transferência, incluindo cópia de texto e links."
+          ],
+          bugFixes: []
+        }
+      }
+    ]
+  }
 } as const;

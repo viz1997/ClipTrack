@@ -15,6 +15,7 @@ export default {
     features: 'Funkcje',
     faq: 'FAQ',
     getStarted: 'Rozpocznij',
+    changelog: 'Dziennik zmian',
   },
   hero: {
     title: 'Zarządzaj schowkiem jak profesjonalista',
@@ -283,4 +284,35 @@ export default {
       email: "1943875844@qq.com",
     },
   },
+  changelog: {
+    title: "Dziennik zmian",
+    description: "Bądź na bieżąco z najnowszymi zmianami i ulepszeniami w ClipTrack.",
+    versions: [
+      {
+        version: "1.0.4",
+        date: "2024-12-29",
+        change: {
+          features: [
+            "Dodano stronę powitalną instalacji, aby poprowadzić nowych użytkowników.",
+            "Wprowadzono samouczek wprowadzający, aby pomóc użytkownikom szybko rozpocząć pracę.",
+            "Dodano przełącznik automatycznego kopiowania, aby umożliwić użytkownikom wyłączenie automatycznego zapisywania kopiowanej treści."
+          ],
+          bugFixes: [
+            "Naprawiono problem, w którym okno paska bocznego nie mogło się przewijać."
+          ]
+        }
+      },
+      {
+        version: "1.0.3",
+        date: "2024-12-26",
+        change: {
+          features: [
+            "Pierwsze wydanie ClipTrack.",
+            "Podstawowe funkcje zarządzania schowkiem, w tym kopiowanie tekstu i linków."
+          ],
+          bugFixes: []
+        }
+      }
+    ]
+  }
 } as const;

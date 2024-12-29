@@ -15,6 +15,7 @@ export default {
     features: '기능',
     faq: 'FAQ',
     getStarted: '시작하기',
+    changelog: '변경 로그',
   },
   hero: {
     title: '전문가처럼 클립보드를 관리하세요',
@@ -283,4 +284,35 @@ export default {
       email: "1943875844@qq.com",
     },
   },
+  changelog: {
+    title: "변경 로그",
+    description: "ClipTrack의 최신 변경 사항 및 개선 사항을 확인하세요.",
+    versions: [
+      {
+        version: "1.0.4",
+        date: "2024-12-29",
+        change: {
+          features: [
+            "새 사용자를 위한 설치 환영 페이지를 추가했습니다.",
+            "온보딩 튜토리얼을 도입하여 사용자가 빠르게 시작할 수 있도록 지원합니다.",
+            "자동 복사 토글을 추가하여 사용자가 자동 기록을 비활성화할 수 있도록 했습니다."
+          ],
+          bugFixes: [
+            "사이드바 창이 스크롤되지 않는 문제를 수정했습니다."
+          ]
+        }
+      },
+      {
+        version: "1.0.3",
+        date: "2024-12-26",
+        change: {
+          features: [
+            "ClipTrack 초기 버전을 출시했습니다.",
+            "텍스트 및 링크 복사를 포함한 기본 클립보드 관리 기능을 지원합니다."
+          ],
+          bugFixes: []
+        }
+      }
+    ]
+  }
 } as const;

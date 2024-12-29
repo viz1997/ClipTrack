@@ -15,6 +15,7 @@ export default {
     features: 'Fonctionnalités',
     faq: 'FAQ',
     getStarted: 'Commencer',
+    changelog: 'Journal des modifications',
   },
   hero: {
     title: 'Gérez votre presse-papiers comme un pro',
@@ -283,4 +284,35 @@ export default {
       email: "1943875844@qq.com",
     },
   },
+  changelog: {
+    title: "Journal des modifications",
+    description: "Restez informé des dernières modifications et améliorations de ClipTrack.",
+    versions: [
+      {
+        version: "1.0.4",
+        date: "2024-12-29",
+        change: {
+          features: [
+            "Ajout d'une page de bienvenue pour guider les nouveaux utilisateurs.",
+            "Introduction d'un tutoriel d'intégration pour aider les utilisateurs à démarrer rapidement.",
+            "Ajout d'un interrupteur de copie automatique pour permettre aux utilisateurs de désactiver l'enregistrement automatique du contenu copié."
+          ],
+          bugFixes: [
+            "Corrigé un problème empêchant la fenêtre de la barre latérale de défiler."
+          ]
+        }
+      },
+      {
+        version: "1.0.3",
+        date: "2024-12-26",
+        change: {
+          features: [
+            "Version initiale de ClipTrack.",
+            "Fonctionnalités de base de gestion du presse-papiers, y compris la copie de texte et de liens."
+          ],
+          bugFixes: []
+        }
+      }
+    ]
+  }
 } as const;
